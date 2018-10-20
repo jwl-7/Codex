@@ -38,17 +38,13 @@ class Commands:
         slot3 = slots[random.randint(0, 6)]
         slot4 = slots[random.randint(0, 6)]
 
+        # display slot machine 
         slotRoll = '|\t:{}:\t|\t:{}:\t|\t:{}:\t|\t:{}:\t|    '.format(slot1, slot2, slot3, slot4)
+        jackpot = '\n< $$$ !!! JACKPOT !!! $$$ >'
 
-        if slot1 == slot2 and slot3 == slot4 or slot1 == slot3 and slot2 == slot4 or slot1 == slot4 and slot2 == slot3:
-            return slotRoll + 'DOSH!'
-
-        elif slot1 == slot2 and slot2 == slot3 and slot3 == slot4 and slot4 != 'seven':
-            return slotRoll + 'MONEYYY!'
-        
-        elif slot1 == 'seven' and slot2 == 'seven' and slot3 == 'seven' and slot4 == 'seven':
-            return slotRoll + '<$ JACKPOT $>'
-
+        if (slot1 == slot2 and slot3 == slot4 or slot1 == slot3 and slot2 == slot4 
+                                              or slot1 == slot4 and slot2 == slot3):
+            return slotRoll + jackpot
         else:
             return slotRoll
 
