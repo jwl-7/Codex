@@ -2,14 +2,14 @@
 a python discord bot with Markov chain responses, slots, and more
 
 ## Features
-!help = dm user list of bot commands
-!8ball = magic 8-ball
-!slots = slot machine
-!coin = heads or tails
-!sponge - spongebob meme text
+- !help = dm user list of bot commands
+- !8ball = magic 8-ball
+- !slots = slot machine
+- !coin = heads or tails
+- !sponge - spongebob meme text
 
 ## Chatbot
-- bot includes a Markov chain sentence generator 
+- bot includes a Markov chain sentence generator
 - triggered when a message includes the bot name or @mentions it
 - automatically adds messages to sqlite database
 - sentences become more amusing overtime as bot "learns" more words
