@@ -19,7 +19,7 @@ a python discord bot with Markov chain responses, slots, and more
 
 ## Requirements
 * Python 3.7+
-* [discord.py - rewrite](https://github.com/Rapptz/discord.py/tree/rewrite/) - Discord API Wrapper
+* [discord.py - rewrite](https://github.com/Rapptz/discord.py/tree/rewrite/) - Discord API wrapper
 
 ## License
 This project is released under the GNU GPL License - see the [LICENSE](LICENSE) file for details
