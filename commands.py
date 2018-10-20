@@ -56,8 +56,8 @@ class Commands:
 
         for i, s in enumerate(sText):
             if i % 2 == 0:
-                spongeText += s.upper()
-            else:
                 spongeText += s.lower()
+            else:
+                spongeText += s.upper()
 
         return spongeText
