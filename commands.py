@@ -30,13 +30,13 @@ class Commands:
         faces = ['Heads!', 'Tails!']
         return random.choice(faces)
 
-    # slot machine with fruit / food emojis
+    # slot machine with fruit emojis
     def slot_machine(self):
-        slots = ['apple', 'watermelon', 'taco', 'seven', 'cherries', 'doughnut', 'pineapple']
-        slot1 = slots[random.randint(0, 6)]
-        slot2 = slots[random.randint(0, 6)]
-        slot3 = slots[random.randint(0, 6)]
-        slot4 = slots[random.randint(0, 6)]
+        slots = ['apple', 'watermelon', 'taco', 'cherries', 'doughnut', 'grapes']
+        slot1 = slots[random.randint(0, 5)]
+        slot2 = slots[random.randint(0, 5)]
+        slot3 = slots[random.randint(0, 5)]
+        slot4 = slots[random.randint(0, 5)]
 
         # display slot machine 
         slotRoll = '|\t:{}:\t|\t:{}:\t|\t:{}:\t|\t:{}:\t|    '.format(slot1, slot2, slot3, slot4)
