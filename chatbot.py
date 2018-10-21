@@ -40,23 +40,23 @@ async def on_message(message):
 
     # dm user list of bot commands
     elif message.content.startswith('!help'):
-        botHelp = cmd.help()
-        await message.author.send(botHelp)
+        bot_help = cmd.help()
+        await message.author.send(bot_help)
 
     # slot machine
     elif message.content.startswith('!slots'):
-        fruits = cmd.slot_machine()
-        await message.channel.send(fruits + ' ' + message.author.mention)
+        slot_spin = cmd.slot_machine()
+        await message.channel.send(slot_spin + ' ' + message.author.mention)
     
     # coin flip
     elif message.content.startswith('!coin'):
-        flip = cmd.coin_flip()
-        await message.channel.send(flip + ' ' + message.author.mention)
+        coin_face = cmd.coin_flip()
+        await message.channel.send(coin_face + ' ' + message.author.mention)
     
     # spongebob text
     elif message.content.startswith('!sponge'):
-        spongeText = cmd.sponge(message.content)
-        await message.channel.send(spongeText)
+        sponge_text = cmd.sponge(message.content)
+        await message.channel.send(sponge_text)
     
     # ignore commands and attachments
     elif message.content.startswith('!') or message.attachments:
