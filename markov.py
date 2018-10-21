@@ -16,8 +16,8 @@ class Markov:
     def fix_message(self, item_text):
         message = item_text
         message = re.sub(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', '', message)
-        dePunctuator = str.maketrans('', '', string.punctuation)
-        message = message.translate(dePunctuator)
+        de_punctuate = str.maketrans('', '', string.punctuation)
+        message = message.translate(de_punctuate)
         message = message.lower()
         return message
 
@@ -26,12 +26,12 @@ class Markov:
         sentence = item_text
 
         # define punctuation with weighted chances
-        punctuationList = ['!', '?', '.']
+        punctuation_list = ['!', '?', '.']
         chance = [0.2, 0.1, 0.9]
 
         # capitalize first word and add punctuation to end of sentence
         sentence = sentence.capitalize()
-        punctuation = random.choices(punctuationList, chance)
+        punctuation = random.choices(punctuation_list, chance)
         punctuation = str(punctuation[0])
         sentence = sentence.rstrip()
         sentence += punctuation
@@ -40,8 +40,8 @@ class Markov:
 
     # create Markov chain from messages stored in the database
     def create_chain(self):
-        startWords = []
-        wordDict = {}
+        start_words = []
+        word_dict = {}
         flag = 1
         count = 0
 
@@ -56,26 +56,27 @@ class Markov:
 
             # reformat messages and split the words into lists
             item = self.fix_message(item)
-            tempList = item.split()
+            temp_list = item.split()
             
             # add the first word of each message to a list
-            if (len(tempList) > 0 and tempList[0].lower() != BOT_NAME and tempList[0].isdigit() != True):
-                startWords.append(tempList[0])
+            if (len(temp_list) > 0 and temp_list[0].lower() != BOT_NAME 
+                                   and temp_list[0].isdigit() != True):
+                start_words.append(temp_list[0])
 
             # create a dictionary of words that will be used to form the sentence
-            for index, item in enumerate(tempList):
+            for index, item in enumerate(temp_list):
 
                 # add new word to dictionary
-                if tempList[index] not in wordDict:
-                    wordDict[tempList[index]] = []
+                if temp_list[index] not in word_dict:
+                    word_dict[temp_list[index]] = []
 
                 # add next word to dictionary
-                if (index < len(tempList) - 1 and tempList[index + 1].lower() != BOT_NAME
-                                              and tempList[index + 1].isdigit() != True):
-                    wordDict[tempList[index]].append(tempList[index + 1])
+                if (index < len(temp_list) - 1 and temp_list[index + 1].lower() != BOT_NAME
+                                               and temp_list[index + 1].isdigit() != True):
+                    word_dict[temp_list[index]].append(temp_list[index + 1])
         
         # choose a random word to start the sentence
-        currWord = random.choice(startWords)
+        curr_word = random.choice(start_words)
         sentence = ''
 
         # loop through the chain
@@ -83,14 +84,14 @@ class Markov:
 
             # add word to sentence
             count += 1
-            sentence += currWord + ' '
+            sentence += curr_word + ' '
 
             # choose a random word
-            if len(wordDict[currWord]) != 0:
-                currWord = random.choice(wordDict[currWord])
+            if len(word_dict[curr_word]) != 0:
+                curr_word = random.choice(word_dict[curr_word])
                 
             # nothing can follow the current word, end the chain
-            elif len(wordDict[currWord]) == 0:
+            elif len(word_dict[curr_word]) == 0:
                 flag = 0
         
         # format final sentence
