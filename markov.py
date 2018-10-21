@@ -11,7 +11,7 @@ class Markov:
     def __init__(self):
         return
 
-    # reformats message to be used in Markov chain:
+    # reformats message to be used in Markov chain
     # removes URL, removes punctuation, converts to lowercase
     def fix_message(self, item_text):
         message = item_text
@@ -21,15 +21,15 @@ class Markov:
         message = message.lower()
         return message
 
-    # adds punctuation to generated sentence
+    # adds some formatting to the generated sentence
     def format_sentence(self, item_text):
         sentence = item_text
 
-        # punctuation with weighted chances
+        # define punctuation with weighted chances
         punctuationList = ['!', '?', '.']
         chance = [0.2, 0.1, 0.9]
 
-        # capitalize first word and add punctuation to sentence
+        # capitalize first word and add punctuation to end of sentence
         sentence = sentence.capitalize()
         punctuation = random.choices(punctuationList, chance)
         punctuation = str(punctuation[0])
@@ -38,7 +38,7 @@ class Markov:
         return sentence
 
 
-    # create Markov chain from database messages
+    # create Markov chain from messages stored in the database
     def create_chain(self):
         startWords = []
         wordDict = {}
@@ -48,13 +48,13 @@ class Markov:
         # connect to database
         db = DBHelper()
 
-        # grab messages from database
+        # get messages from database
         messages = db.get_items()
 
         # loop through all messages and create dictionary
         for item in messages:
 
-            # reformat messages and then split them into word lists
+            # reformat messages and split the words into lists
             item = self.fix_message(item)
             tempList = item.split()
             
@@ -78,7 +78,7 @@ class Markov:
         currWord = random.choice(startWords)
         sentence = ''
 
-        # generate the Markov chain
+        # loop through the chain
         while flag == 1 and count < 100:
 
             # add word to sentence
