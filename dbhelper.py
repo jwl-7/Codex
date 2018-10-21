@@ -1,7 +1,8 @@
 import sqlite3
 
 class DBHelper:
-    # This class provides helper functions to deal with sqlite database.
+    # This class provides helper functions to communicate 
+    # with the sqlite database.
 
     # creates database connection
     def __init__(self, dbname = 'chatlog.sqlite'):
@@ -28,7 +29,7 @@ class DBHelper:
         self.conn.execute(stmt, args)
         self.conn.commit()
 
-    # grabs all items from table
+    # gets all items from table
     def get_items(self):
         stmt = 'SELECT messages FROM msglog'
         return [x[0] for x in self.conn.execute(stmt)]
