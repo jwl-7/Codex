@@ -1,6 +1,7 @@
 from dbhelper import DBHelper
 from commands import Commands
 from markov import Markov
+from wisdom import Chopra
 import discord
 import random
 
