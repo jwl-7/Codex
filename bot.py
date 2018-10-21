@@ -58,6 +58,12 @@ async def on_message(message):
         sponge_text = cmd.sponge(message.content)
         await message.channel.send(sponge_text)
     
+    # deepak chopra quote
+    elif message.content.startswith('!wisdom'):
+        wisdom = Chopra()
+        wisdom_quote = wisdom.get_quote()
+        await message.channel.send(wisdom_quote)
+    
     # ignore commands and attachments
     elif message.content.startswith('!') or message.attachments:
         return
