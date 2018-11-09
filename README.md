@@ -7,6 +7,7 @@ a python discord bot with Markov chain responses, slots, and more
 - !slots = slot machine
 - !coin = heads or tails
 - !sponge - spongebob meme text
+- !wisdom - generate faux Deepak Chopra quote
 
 ## Chatbot
 - bot includes a Markov chain sentence generator
@@ -19,7 +20,7 @@ a python discord bot with Markov chain responses, slots, and more
 
 ## Requirements
 * Python 3.7+
-* [discord.py - rewrite](https://github.com/Rapptz/discord.py/tree/rewrite/) - Discord API wrapper
+* [discord.py](https://github.com/Rapptz/discord.py/tree/rewrite/)
 
 ## License
 This project is released under the GNU GPL License - see the [LICENSE](LICENSE) file for details
