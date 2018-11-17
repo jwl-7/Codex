@@ -6,14 +6,17 @@ import re
 BOT_NAME = '---> BOT NAME GOES HERE <---'
 
 class Markov:
-# This class generates the Markov chain messages for the chatbot.
+    """
+    This class generates the Markov chain messages for the chatbot.
+
+    """
 
     def __init__(self):
         return
 
-    # reformats message to be used in Markov chain
-    # removes URL, removes punctuation, converts to lowercase
     def fix_message(self, item_text):
+        """ reformats message to be used in Markov chain """
+
         message = item_text
         message = re.sub(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', '', message)
         de_punctuate = str.maketrans('', '', string.punctuation)
@@ -21,11 +24,10 @@ class Markov:
         message = message.lower()
         return message
 
-    # adds some formatting to the generated sentence
     def format_sentence(self, item_text):
-        sentence = item_text
+        """ adds some formatting to the generated sentence """
 
-        # define punctuation with weighted chances
+        sentence = item_text
         punctuation_list = ['!', '?', '.']
         chance = [0.2, 0.1, 0.9]
 
@@ -37,21 +39,16 @@ class Markov:
         sentence += punctuation
         return sentence
 
-
-    # create Markov chain from messages stored in the database
     def create_chain(self):
+        """ create Markov chain from messages stored in the database """
+
         start_words = []
         word_dict = {}
         flag = 1
         count = 0
-
-        # connect to database
         db = DBHelper()
-
-        # get messages from database
         messages = db.get_items()
 
-        # loop through all messages and create dictionary
         for item in messages:
 
             # reformat messages and split the words into lists
@@ -59,20 +56,26 @@ class Markov:
             temp_list = item.split()
             
             # add the first word of each message to a list
-            if (len(temp_list) > 0 and temp_list[0].lower() != BOT_NAME 
-                                   and temp_list[0].isdigit() != True):
+            if (
+                len(temp_list) > 0 and 
+                temp_list[0].lower() != BOT_NAME and 
+                temp_list[0].isdigit() != True
+            ):
                 start_words.append(temp_list[0])
 
             # create a dictionary of words that will be used to form the sentence
             for index, item in enumerate(temp_list):
-
+                
                 # add new word to dictionary
                 if temp_list[index] not in word_dict:
                     word_dict[temp_list[index]] = []
 
                 # add next word to dictionary
-                if (index < len(temp_list) - 1 and temp_list[index + 1].lower() != BOT_NAME
-                                               and temp_list[index + 1].isdigit() != True):
+                if (
+                    index < len(temp_list) - 1 and 
+                    temp_list[index + 1].lower() != BOT_NAME and 
+                    temp_list[index + 1].isdigit() != True
+                ):
                     word_dict[temp_list[index]].append(temp_list[index + 1])
         
         # choose a random word to start the sentence
