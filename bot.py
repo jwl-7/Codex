@@ -6,7 +6,7 @@ import discord
 import random
 
 API_TOKEN = '---> DISCORD API TOKEN GOES HERE <---'
-BOT_NAME = '---> BOT NAME GOES HERE <---'
+BOT_NAME  = '---> BOT NAME GOES HERE <---'
 
 bot = discord.Client()
 db = DBHelper()
