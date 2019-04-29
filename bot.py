@@ -1,9 +1,10 @@
-from dbhelper import DBHelper
-from commands import Commands
-from markov import Markov
-from wisdom import Chopra
 import discord
 import random
+from dbhelper import DBHelper
+from commands import Commands
+from corporatebs import Corporate
+from markov import Markov
+from wisdom import Chopra
 
 API_TOKEN = '---> DISCORD API TOKEN GOES HERE <---'
 BOT_NAME  = '---> BOT NAME GOES HERE <---'
@@ -22,6 +23,8 @@ async def on_ready():
 @bot.event
 async def on_message(message):
     cmd = Commands()
+    cbs = Corporate()
+    wisdom = Chopra()
 
     if message.author == bot.user:
         return
@@ -40,9 +43,11 @@ async def on_message(message):
     elif message.content.startswith('!sponge'):
         sponge_text = cmd.sponge(message.content)
         await message.channel.send(sponge_text)
+    elif message.content.startswith('!cbs')
+        corporate_statement = cbs.generate_statement()
+        await message.channel.send(corporate_statement)
     elif message.content.startswith('!wisdom'):
-        wisdom = Chopra()
-        wisdom_quote = wisdom.get_quote()
+        wisdom_quote = wisdom.generate_quote()
         await message.channel.send(wisdom_quote)
     elif message.content.startswith('!') or message.attachments:
         return
