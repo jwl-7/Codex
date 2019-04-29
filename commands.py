@@ -90,7 +90,7 @@ class BotCommands:
         slot4 = slots[random.randint(0, 5)]
 
         # display slot machine 
-        slot_spin = '|\t:{}:\t|\t:{}:\t|\t:{}:\t|\t:{}:\t|    '.format(slot1, slot2, slot3, slot4)
+        slot_spin = f'|\t:{slot1}:\t|\t:{slot2}:\t|\t:{slot3}:\t|\t:{slot4}:\t|    '
         jackpot_msg = '\n< $$$ !!! JACKPOT !!! $$$ >'
 
         if (
