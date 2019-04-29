@@ -28,16 +28,16 @@ async def on_message(message):
         return
     elif message.content.startswith('!8ball'):
         fortune = cmd.magic_8ball()
-        await message.channel.send(fortune + ' ' + message.author.mention)
+        await message.channel.send(f'{fortune} {message.author.mention}')
     elif message.content.startswith('!coin'):
         coin_toss = cmd.coin_flip()
-        await message.channel.send(coin_toss + ' ' + message.author.mention)
+        await message.channel.send(f'{coin_toss} {message.author.mention}')
     elif message.content.startswith('!help'):
         bot_help = cmd.help()
         await message.author.send(bot_help)
     elif message.content.startswith('!slots'):
         slot_spin = cmd.slot_machine()
-        await message.channel.send(slot_spin + ' ' + message.author.mention)
+        await message.channel.send(f'{slot_spin} {message.author.mention}')
     elif message.content.startswith('!sponge'):
         sponge_text = cmd.sponge(message.content)
         await message.channel.send(sponge_text)
