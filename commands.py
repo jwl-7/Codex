@@ -16,8 +16,8 @@ class BotCommands:
             "!coin - heads or tails\n"
             "!slots - slot machine\n" 
             "!sponge - spongebob meme text\n"
-            "!wisdom - deepak chopra quote```"
-            "!cbs - corporate bullshit statement\n" 
+            "!wisdom - deepak chopra quote\n"
+            "!cbs - corporate bullshit statement```" 
             )
         return command_list
 
