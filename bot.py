@@ -23,7 +23,7 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-    cmd = Commands()
+    cmd = BotCommands()
     if message.author == bot.user:
         return
     elif message.content.startswith('!8ball'):
