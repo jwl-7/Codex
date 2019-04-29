@@ -2,7 +2,7 @@ import random
 import corporatebs
 import chopra
 
-class Commands:
+class BotCommands:
     """This class provides the functions that serve as the backend of the bot commands."""
 
     def help(self):
