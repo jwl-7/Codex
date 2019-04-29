@@ -7,6 +7,7 @@ a python discord bot with Markov chain responses, slots, and more
 - !slots = slot machine
 - !coin = heads or tails
 - !sponge - spongebob meme text
+- !cbs - generate corporate bullshit statement
 - !wisdom - generate faux Deepak Chopra quote
 
 ## Chatbot
