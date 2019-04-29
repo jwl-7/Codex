@@ -1,6 +1,6 @@
 import random
 
-def generate_statement(self):
+def generate_statement():
     """Generates random corporate bullshit statement that is built using a randomly selected
     choice of words from the adverbs, verbs, adjectives, and nouns lists.
 
