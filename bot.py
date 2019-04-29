@@ -1,10 +1,8 @@
 import discord
 import random
-from dbhelper import DBHelper
+from dbhelper import Database
 from commands import Commands
-from corporatebs import Corporate
-from markov import Markov
-from wisdom import Chopra
+from markov_chain import Markov
 
 API_TOKEN = '---> DISCORD API TOKEN GOES HERE <---'
 BOT_NAME  = '---> BOT NAME GOES HERE <---'
@@ -23,8 +21,6 @@ async def on_ready():
 @bot.event
 async def on_message(message):
     cmd = Commands()
-    cbs = Corporate()
-    wisdom = Chopra()
 
     if message.author == bot.user:
         return
