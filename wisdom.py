@@ -1,12 +1,10 @@
 import random
 
 class Chopra:
-    """
-    This class generates fake Deepak Chopra quotes.
+    """This class generates fake Deepak Chopra quotes."""
 
-    """
-
-    def get_quote(self):
+    def generate_quote(self):
+        """Generates faux quote using 4 sets of words / phrases."""
         quotes_1 = [
             'The universe',
             'Your consciousness',
@@ -65,7 +63,6 @@ class Chopra:
             'The key to joy',
             'Innocence'
             ]
-                
         quotes_2 = [
             'relies on',
             'depends on',
@@ -122,7 +119,6 @@ class Chopra:
             'corresponds to',
             'results from'
             ]
-
         quotes_3 = [
             'your own',
             'infinite',
@@ -177,7 +173,6 @@ class Chopra:
             'total acceptance of',
             'innumerable'
             ]
-
         quotes_4 = [
             'joy',
             'creativity',
@@ -227,10 +222,9 @@ class Chopra:
             'miracles',
             'observations'
             ]
-
         part1 = random.choice(quotes_1)
         part2 = random.choice(quotes_2)
         part3 = random.choice(quotes_3)
         part4 = random.choice(quotes_4)
-        quote = part1 + ' ' + part2 + ' ' + part3 + ' ' + part4 + '.'
+        quote = f'{part1} {part2} {part3} {part4}.'
         return quote
