@@ -13,11 +13,11 @@ class BotCommands:
         """
         command_list = (
             "```!8ball - magic 8-ball\n"
-            "!cbs - corporate bullshit statement\n" 
             "!coin - heads or tails\n"
             "!slots - slot machine\n" 
             "!sponge - spongebob meme text\n"
             "!wisdom - deepak chopra quote```"
+            "!cbs - corporate bullshit statement\n" 
             )
         return command_list
 
