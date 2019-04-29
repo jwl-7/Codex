@@ -3,8 +3,6 @@ import string
 import re
 from dbhelper import Database
 
-BOT_NAME = '---> BOT NAME GOES HERE <---'
-
 class Markov:
     """This class provides a simple Markov chain implementation to help
     the bot generate funny sentences based on what other users
@@ -44,8 +42,11 @@ class Markov:
         formatted_sentence += punctuation
         return formatted_sentence
 
-    def create_chain(self):
+    def create_chain(self, bot_name):
         """Creates Markov chain from messages stored in the sqlite db and generates sentence.
+
+        Args:
+            bot_name (str): Name of the Discord bot.
         
         Returns:
             markov_sentence (str): Markov chain generated sentence.
@@ -65,7 +66,7 @@ class Markov:
             # add the first word of each message to a list
             if (
                 len(temp_list) > 0 and 
-                temp_list[0].lower() != BOT_NAME and 
+                temp_list[0].lower() != bot_name and 
                 temp_list[0].isdigit() != True
             ):
                 start_words.append(temp_list[0])
@@ -79,7 +80,7 @@ class Markov:
                 # add next word to dictionary
                 if (
                     index < len(temp_list) - 1 and 
-                    temp_list[index + 1].lower() != BOT_NAME and 
+                    temp_list[index + 1].lower() != bot_name and 
                     temp_list[index + 1].isdigit() != True
                 ):
                     word_dict[temp_list[index]].append(temp_list[index + 1])
