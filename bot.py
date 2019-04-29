@@ -16,9 +16,10 @@ db.setup()
 
 @bot.event
 async def on_ready():
-    print('Logged in as:')
-    print('BOT ' + bot.user.name)
-    print('ID ' + str(bot.user.id))
+    print('[LOGIN SUCCESSFUL]')
+    print('----------------------')
+    print(f'BOT: {bot.user.name}')
+    print(f'ID: {bot.user.id}')
     print('----------------------')
 
 @bot.event
