@@ -25,7 +25,7 @@ class BotCommands:
         """!8ball - Magic 8-Ball
 
         Returns:
-            response (str): Random response.
+            fortune (str): Random response.
         """
         responses = [
             'It is certain.', 
@@ -49,7 +49,8 @@ class BotCommands:
             'Outlook not so good.', 
             'Very doubtful.'
             ]
-        return random.choice(responses)
+        fortune = random.choice(responses)
+        return fortune
 
     def coin_flip(self):
         """!coin - Coin Flip
