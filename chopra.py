@@ -1,6 +1,6 @@
 """This file contains lists of words to be used for the Deepak Chopra quote generator."""
 
-quotes_1 = [
+words_1 = [
     'The universe',
     'Your consciousness',
     'Quantum physics',
@@ -58,7 +58,7 @@ quotes_1 = [
     'The key to joy',
     'Innocence'
     ]
-quotes_2 = [
+words_2 = [
     'relies on',
     'depends on',
     'embraces',
@@ -114,7 +114,7 @@ quotes_2 = [
     'corresponds to',
     'results from'
     ]
-quotes_3 = [
+words_3 = [
     'your own',
     'infinite',
     'self-righteous',
@@ -168,7 +168,7 @@ quotes_3 = [
     'total acceptance of',
     'innumerable'
     ]
-quotes_4 = [
+words_4 = [
     'joy',
     'creativity',
     'life',
