@@ -4,7 +4,7 @@
 import discord
 import random
 from dbhelper import Database
-from commands import Commands
+from commands import BotCommands
 from markov_chain import Markov
 
 API_TOKEN = '---> DISCORD API TOKEN GOES HERE <---'
@@ -41,7 +41,7 @@ async def on_message(message):
     elif message.content.startswith('!sponge'):
         sponge_text = cmd.sponge(message.content)
         await message.channel.send(sponge_text)
-    elif message.content.startswith('!cbs')
+    elif message.content.startswith('!cbs'):
         corporate_statement = cmd.corporate_bullshit()
         await message.channel.send(corporate_statement)
     elif message.content.startswith('!wisdom'):
