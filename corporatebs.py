@@ -1,4 +1,4 @@
-"""This file contains lists of words to be used for the corporate bullshit statement generator."""
+"""This file contains lists of words to be used for the corporate bulls**t statement generator."""
 
 adverbs = [
     'appropriately',
