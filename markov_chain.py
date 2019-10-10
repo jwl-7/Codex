@@ -1,20 +1,29 @@
+"""Markov Chain Sentence Generator
+
+This module uses words from the database to construct fun sentences.
+"""
+
+
 import random
 import string
 import re
+
 from dbhelper import Database
 
+
 class Markov:
-    """This class provides a simple Markov chain implementation to help
-    the bot generate funny sentences based on what other users
-    have already said in the Discord server.
+    """This class contains a simple Markov chain implementation.
+
+    The markov chain is used for the bot to generate funny sentences
+    based on what users have said in the Discord server.
     """
 
     def fix_message(self, item):
         """Reformats message to be used in the chain.
-        
+
         Args:
             item (str): Text that is grabbed from the sqlite db.
-            
+
         Returns:
             message (str): Text that has been stripped of all punctuation.
         """
@@ -26,7 +35,7 @@ class Markov:
 
     def format_sentence(self, unformatted_sentence):
         """Adds formatting to generated sentence.
-        
+
         Args:
             unformatted_sentence (str): Unformatted generated sentence.
 
@@ -47,7 +56,7 @@ class Markov:
 
         Args:
             bot_name (str): Name of the Discord bot.
-        
+
         Returns:
             markov_sentence (str): Markov chain generated sentence.
         """
@@ -65,9 +74,9 @@ class Markov:
 
             # add the first word of each message to a list
             if (
-                len(temp_list) > 0 and 
-                temp_list[0].lower() != bot_name and 
-                temp_list[0].isdigit() != True
+                len(temp_list) > 0 and
+                temp_list[0].lower() != bot_name and
+                not temp_list[0].isdigit()
             ):
                 start_words.append(temp_list[0])
 
@@ -79,12 +88,12 @@ class Markov:
 
                 # add next word to dictionary
                 if (
-                    index < len(temp_list) - 1 and 
-                    temp_list[index + 1].lower() != bot_name and 
-                    temp_list[index + 1].isdigit() != True
+                    index < len(temp_list) - 1 and
+                    temp_list[index + 1].lower() != bot_name and
+                    not temp_list[index + 1].isdigit()
                 ):
                     word_dict[temp_list[index]].append(temp_list[index + 1])
-        
+
         # choose a random word to start the sentence
         curr_word = random.choice(start_words)
         sentence = ''
@@ -98,11 +107,11 @@ class Markov:
             # choose a random word
             if len(word_dict[curr_word]) != 0:
                 curr_word = random.choice(word_dict[curr_word])
-                
+
             # nothing can follow the current word, end the chain
             elif len(word_dict[curr_word]) == 0:
                 flag = 0
-        
+
         # format final sentence
         markov_sentence = self.format_sentence(sentence)
         return markov_sentence

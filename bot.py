@@ -1,18 +1,24 @@
-#!/usr/bin/env python3
-#-*- coding: utf-8 -*-
+"""Discord BOT
 
-import discord
+This module contains the core functionality of the bot.
+"""
+
+
 import random
+import discord
+
 from dbhelper import Database
 from commands import BotCommands
 from markov_chain import Markov
 
+
 API_TOKEN = '---> DISCORD API TOKEN GOES HERE <---'
-BOT_NAME  = '---> BOT NAME GOES HERE <---'
+BOT_NAME = '---> BOT NAME GOES HERE <---'
 
 bot = discord.Client()
 db = Database()
 db.setup()
+
 
 @bot.event
 async def on_ready():
@@ -21,6 +27,7 @@ async def on_ready():
     print(f'BOT: {bot.user.name}')
     print(f'ID: {bot.user.id}')
     print('----------------------')
+
 
 @bot.event
 async def on_message(message):
@@ -57,5 +64,6 @@ async def on_message(message):
         await message.channel.send(response)
     else:
         db.add_item(message.content)
+
 
 bot.run(API_TOKEN)

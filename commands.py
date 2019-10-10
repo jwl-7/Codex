@@ -1,23 +1,31 @@
+"""Commands
+
+This module contains the backend functionality for the bot commands.
+"""
+
+
 import random
+
 import corporatebs
 import chopra
 
+
 class BotCommands:
-    """This class provides the functions that serve as the backend of the bot commands."""
+    """This class contains functions that implement various bot commands."""
 
     def help(self):
         """!help - Bot Command List
-        
+
         Returns:
             command_list (str): List of bot commands.
         """
         command_list = (
             "```!8ball - magic 8-ball\n"
             "!coin - heads or tails\n"
-            "!slots - slot machine\n" 
+            "!slots - slot machine\n"
             "!sponge - spongebob meme text\n"
             "!wisdom - deepak chopra quote\n"
-            "!cbs - corporate bullshit statement```" 
+            "!cbs - corporate bullshit statement```"
             )
         return command_list
 
@@ -28,25 +36,25 @@ class BotCommands:
             fortune (str): Random response.
         """
         responses = [
-            'It is certain.', 
+            'It is certain.',
             'It is decidedly so.',
-            'Without a doubt.', 
-            'Yes - definitely.', 
-            'You may rely on it.', 
+            'Without a doubt.',
+            'Yes - definitely.',
+            'You may rely on it.',
             'As I see it, yes.',
-            'Most likely.', 
-            'Outlook good.', 
-            'Yes.', 
-            'Signs point to yes.', 
-            'Reply hazy, try again.', 
-            'Ask again later.', 
-            'Better not tell you now.', 
-            'Cannot predict now.', 
-            'Concentrate and ask again.', 
-            'Do not count on it.', 
-            'My reply is no.', 
-            'My sources say no.', 
-            'Outlook not so good.', 
+            'Most likely.',
+            'Outlook good.',
+            'Yes.',
+            'Signs point to yes.',
+            'Reply hazy, try again.',
+            'Ask again later.',
+            'Better not tell you now.',
+            'Cannot predict now.',
+            'Concentrate and ask again.',
+            'Do not count on it.',
+            'My reply is no.',
+            'My sources say no.',
+            'Outlook not so good.',
             'Very doubtful.'
             ]
         fortune = random.choice(responses)
@@ -78,7 +86,7 @@ class BotCommands:
 
     def slot_machine(self):
         """!slots - Fruit Emojis Slot Machine
-        
+
         Returns:
             slot_spin (str): The slot machine spin results in the form of fruit emojis.
             slot_spin + jackpot_msg (str): The slot machine spin results + jackpot message.
@@ -89,13 +97,13 @@ class BotCommands:
         slot3 = slots[random.randint(0, 5)]
         slot4 = slots[random.randint(0, 5)]
 
-        # display slot machine 
+        # display slot machine
         slot_spin = f'|\t:{slot1}:\t|\t:{slot2}:\t|\t:{slot3}:\t|\t:{slot4}:\t|    '
         jackpot_msg = '\n< $$$ !!! JACKPOT !!! $$$ >'
 
         if (
-            slot1 == slot2 and slot3 == slot4 or 
-            slot1 == slot3 and slot2 == slot4 or 
+            slot1 == slot2 and slot3 == slot4 or
+            slot1 == slot3 and slot2 == slot4 or
             slot1 == slot4 and slot2 == slot3
         ):
             return slot_spin + jackpot_msg

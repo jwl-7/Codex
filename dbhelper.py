@@ -1,9 +1,16 @@
+"""Database Helper
+
+This module helps the bot interface with the sqlite database.
+"""
+
+
 import sqlite3
+
 
 class Database:
     """This class provides helper functions to communicate with the sqlite database."""
 
-    def __init__(self, dbname = 'chatlog.sqlite'):
+    def __init__(self, dbname='chatlog.sqlite'):
         """Creates database connection."""
         self.dbname = dbname
         self.conn = sqlite3.connect(dbname)
@@ -20,7 +27,7 @@ class Database:
         args = (item_text, )
         self.conn.execute(stmt, args)
         self.conn.commit()
-    
+
     def delete_item(self, item_text):
         """Deletes item from table."""
         stmt = 'DELETE FROM msglog WHERE messages = (?)'

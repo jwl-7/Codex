@@ -1,4 +1,8 @@
-"""This file contains lists of words to be used for the Deepak Chopra quote generator."""
+"""Deepak Chopra Words
+
+This module contains lists of words for use with the Deepak Chopra quote generator.
+"""
+
 
 words_1 = [
     'The universe',
@@ -58,6 +62,7 @@ words_1 = [
     'The key to joy',
     'Innocence'
     ]
+
 words_2 = [
     'relies on',
     'depends on',
@@ -114,6 +119,7 @@ words_2 = [
     'corresponds to',
     'results from'
     ]
+
 words_3 = [
     'your own',
     'infinite',
@@ -168,6 +174,7 @@ words_3 = [
     'total acceptance of',
     'innumerable'
     ]
+
 words_4 = [
     'joy',
     'creativity',

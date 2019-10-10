@@ -1,4 +1,8 @@
-"""This file contains lists of words to be used for the corporate bulls**t statement generator."""
+"""Corporate BS
+
+This file contains lists of words for use with the corporate bulls**t statement generator.
+"""
+
 
 adverbs = [
     'appropriately',
@@ -33,7 +37,8 @@ adverbs = [
     'seamlessly',
     'synergistically',
     'uniquely'
-    ]      
+    ]
+
 verbs = [
     'actualize',
     'administrate',
@@ -136,6 +141,7 @@ verbs = [
     'visualize',
     'whiteboard',
     ]
+
 adjectives = [
     '24/7',
     '24/365',
@@ -299,6 +305,7 @@ adjectives = [
     'world-class',
     'worldwide'
     ]
+
 nouns = [
     'action items',
     'adoption',
