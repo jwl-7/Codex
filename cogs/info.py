@@ -33,7 +33,10 @@ class Info(commands.Cog):
             '!wisdom - deepak chopra quote\n'
             '!cbs - corporate bullshit statement```'
             )
-        await ctx.author.send(command_list)
+        try:
+            await ctx.author.send(command_list)
+        except discord.Forbidden:
+            print(f'[ERROR] Failed to send !help list to {ctx.author.name}')
 
 
 def setup(bot):
