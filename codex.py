@@ -31,7 +31,7 @@ def main():
             try:
                 bot.load_extension(f'cogs.{extension}')
             except discord.DiscordException:
-                print(f'[ERROR] Failed to load extension cogs.{extension}')
+                print(f'[ERROR] Failed to load extension {extension}.py')
 
 
 if __name__ == '__main__':
