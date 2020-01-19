@@ -3,7 +3,7 @@
 This module contains the core functionality of the bot.
 """
 
-
+import os
 import discord
 import yaml
 from discord.ext import commands
@@ -12,41 +12,27 @@ from discord.ext import commands
 with open('config.yml') as file:
     config = yaml.safe_load(file)
 
-
-PREFIX = config['bot']['prefix']
-API_TOKEN = config['bot']['token']
-
-
-extensions = [
-    'cogs.chatlog',
-    'cogs.chopra',
-    'cogs.corporatebs',
-    'cogs.eightball',
-    'cogs.fun',
-    'cogs.info',
-    'cogs.markov'
-    ]
-
-
-bot = commands.Bot(command_prefix=PREFIX)
+bot = commands.Bot(command_prefix=config['bot']['prefix'])
 
 
 @bot.event
 async def on_ready():
     print('Logged in as:')
-    print('-----------------------')
+    print('--------------')
     print(f'BOT: {bot.user.name}')
     print(f'ID: {bot.user.id}')
     print('-----------------------')
 
 
 def main():
-    for extension in extensions:
-        bot.load_extension(extension)
+    for file in os.listdir('cogs'):
+        if file.endswith('.py'):
+            extension = file[:-3]
+            bot.load_extension(f'cogs.{extension}')
 
 
 if __name__ == '__main__':
     main()
 
 
-bot.run(API_TOKEN)
+bot.run(config['bot']['token'])
