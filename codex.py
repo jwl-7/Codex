@@ -5,11 +5,18 @@ This module contains the core functionality of the bot.
 
 
 import discord
+import yaml
 from discord.ext import commands
 
 
-API_TOKEN = 'DISCORD_API_TOKEN'
-PREFIX = '!'
+with open('config.yml') as file:
+    config = yaml.safe_load(file)
+
+
+PREFIX = config['bot']['prefix']
+API_TOKEN = config['bot']['token']
+
+
 extensions = [
     'cogs.chatlog',
     'cogs.chopra',
