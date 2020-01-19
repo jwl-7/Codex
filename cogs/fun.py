@@ -56,7 +56,7 @@ class Fun(commands.Cog):
 
     @commands.command()
     async def sponge(self, ctx, *, message):
-        """!sponge - Converts message to SpongeBob meme text."""
+        """!sponge <message> - Converts message to SpongeBob meme text."""
         text = message
         sponge_text = ''
         await ctx.message.delete()
