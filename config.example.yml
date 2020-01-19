@@ -1,0 +1,3 @@
+bot:
+    prefix:     'COMMAND_PREFIX'
+    token:      'API_TOKEN'
