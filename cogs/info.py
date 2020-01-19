@@ -8,38 +8,31 @@ import discord
 from discord.ext import commands
 
 
-command_list = (
-    '```!8ball - magic 8-ball\n'
-    '!coin - heads or tails\n'
-    '!slots - slot machine\n'
-    '!sponge - spongebob meme text\n'
-    '!wisdom - deepak chopra quote\n'
-    '!cbs - corporate bullshit statement```'
-    )
-
-
 class Info(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
     @commands.command()
     async def ping(self, ctx):
-        """!ping - Bot Response Time
-
-        Returns:
-            milliseconds (int): API latency in ms.
-        """
+        """!ping - Bot Response Time"""
         latency = self.bot.latency
         milliseconds = int(round(latency * 1000))
-        await ctx.send(f'Pong! Latency: {milliseconds}ms')
+
+        embed = discord.Embed(colour=discord.Colour.green())
+        embed.add_field(name=f'*Pong!*', value=f'*Latency:* **{milliseconds}ms**')
+        await ctx.send(embed=embed)
 
     @commands.command()
     async def help(self, ctx):
-        """!help - Bot Command List
-
-        Returns:
-            command_list (str): List of bot commands.
-        """
+        """!help - Bot Command List"""
+        command_list = (
+            '```!8ball - magic 8-ball\n'
+            '!coin - heads or tails\n'
+            '!slots - slot machine\n'
+            '!sponge - spongebob meme text\n'
+            '!wisdom - deepak chopra quote\n'
+            '!cbs - corporate bullshit statement```'
+            )
         await ctx.author.send(command_list)
 
 

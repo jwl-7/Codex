@@ -1,4 +1,4 @@
-"""Discord BOT
+"""Codex Discord BOT
 
 This module contains the core functionality of the bot.
 """
@@ -8,11 +8,16 @@ import discord
 from discord.ext import commands
 
 
-API_TOKEN = '---> DISCORD API TOKEN GOES HERE <---'
-BOT_NAME = '---> BOT NAME GOES HERE <---'
+API_TOKEN = 'DISCORD_API_TOKEN'
 PREFIX = '!'
 extensions = [
-    'cogs.info'
+    'cogs.chatlog',
+    'cogs.chopra',
+    'cogs.corporatebs',
+    'cogs.eightball',
+    'cogs.fun',
+    'cogs.info',
+    'cogs.markov'
     ]
 
 
