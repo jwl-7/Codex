@@ -1,19 +1,26 @@
 # Codex
 a python discord bot with Markov chain responses, slots, and more
 
-## Features
-- !help = dm user list of bot commands
-- !8ball = magic 8-ball
-- !slots = slot machine
-- !coin = heads or tails
-- !sponge - spongebob meme text
-- !cbs - generate corporate bulls**t statement
-- !wisdom - generate faux Deepak Chopra quote
+## Commands
+- **!help** - dm user bot command list
+- **!8ball** - magic 8-ball
+- **!slots** - slot machine
+- **!coin** - heads or tails
+- **!sponge** *\<message>* - convert message to spongemock text
+- **!wisdom** - generate fake deepak chopra quote
+- **!cbs** - generate corporate bulls**t
+- **!ping** - test bot latency
 
-## Chatbot
+## Admin Commands
+- **!admincheck** - check if you are the bot owner
+- **!load** *\<name>* - load extension
+- **!unload** *\<name>* - unload extension
+- **!reload** *\<name>* - reload extension
+
+## Markov Sentence Generator
 - bot includes a Markov chain sentence generator
+- words grabbed from chatlog stored in sqlite database
 - triggered when a message includes the bot name or @mentions it
-- automatically adds messages to sqlite database
 - sentences become more amusing overtime as bot "learns" more words
 
 ## Screenshots
