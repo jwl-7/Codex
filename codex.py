@@ -28,7 +28,10 @@ def main():
     for file in os.listdir('cogs'):
         if file.endswith('.py'):
             extension = file[:-3]
-            bot.load_extension(f'cogs.{extension}')
+            try:
+                bot.load_extension(f'cogs.{extension}')
+            except discord.DiscordException:
+                print(f'[ERROR] Failed to load extension cogs.{extension}')
 
 
 if __name__ == '__main__':
