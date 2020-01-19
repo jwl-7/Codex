@@ -1,6 +1,6 @@
 """Info
 
-This module contains the bot's utility commands.
+This module contains help commands.
 """
 
 
