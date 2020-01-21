@@ -27,7 +27,7 @@ class Fun(commands.Cog):
 
     @commands.command()
     async def joke(self, ctx):
-        """!joke - random dad joke"""
+        """!joke - Random dad joke"""
         r = requests.get('https://icanhazdadjoke.com/', headers={'Accept':'text/plain'})
         try:
             r.raise_for_status()
