@@ -5,6 +5,7 @@ This module includes fun/simple commands.
 
 
 import random
+import requests
 import discord
 import urllib.parse
 from discord.ext import commands
@@ -23,6 +24,18 @@ class Fun(commands.Cog):
         embed = discord.Embed(colour=discord.Colour.blue())
         embed.add_field(name=f'*{ctx.author.name}, the coin lands...*', value=f'**{outcome}**')
         await ctx.send(embed=embed)
+
+    @commands.command()
+    async def joke(self, ctx):
+        """!joke - random dad joke"""
+        r = requests.get('https://icanhazdadjoke.com/', headers={'Accept':'text/plain'})
+        try:
+            r.raise_for_status()
+        except requests.exceptions.HTTPError as error:
+            print(f'[ERROR] {error}')
+            return -1
+
+        await ctx.send(r.text)
 
     @commands.command()
     async def lmgtfy(self, ctx, *, search):
