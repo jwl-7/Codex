@@ -9,6 +9,7 @@ a python discord bot with Markov chain responses, slots, and more
 - **!sponge** *\<message>* - convert message to spongemock text
 - **!wisdom** - generate fake deepak chopra quote
 - **!cbs** - generate corporate bulls**t
+- **!lmgtfy** *\<search>* - generate lmgtfy link
 - **!ping** - test bot latency
 
 ## Admin Commands
