@@ -421,7 +421,7 @@ class CorporateBs(commands.Cog):
         statement = f'{adverb} {verb} {adjective} {noun}'
 
         embed = discord.Embed(colour=discord.Colour.blue())
-        embed.add_field(name=f'*Corporate Bullshit*', value=f'**{statement}**')
+        embed.add_field(name=f'Corporate Bullshit', value=f'**{statement}**')
         await ctx.send(embed=embed)
 
 

@@ -243,7 +243,7 @@ class ChopraWisdom(commands.Cog):
         quote = f'{part1} {part2} {part3} {part4}.'
 
         embed = discord.Embed(colour=discord.Colour.blue())
-        embed.add_field(name=f'*Chopra Wisdom*', value=f'**{quote}**')
+        embed.add_field(name=f'Chopra Wisdom', value=f'**{quote}**')
         await ctx.send(embed=embed)
 
 
