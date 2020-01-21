@@ -46,6 +46,21 @@ class Fun(commands.Cog):
         )
 
     @commands.command()
+    async def shiba(self, ctx):
+        """!shiba - Random Shiba"""
+        r = requests.get('https://dog.ceo/api/breed/shiba/images/random')
+        try:
+            r.raise_for_status()
+        except requests.exceptions.HTTPError as error:
+            print(f'[ERROR] {error}')
+            return -1
+
+        image = r.json()['message']
+        embed = discord.Embed(colour=discord.Colour.blue())
+        embed.set_image(url=image)
+        await ctx.send(embed=embed)
+
+    @commands.command()
     async def slots(self, ctx):
         """!slots - Fruit Emojis Slot Machine"""
         slots = ['apple', 'watermelon', 'taco', 'cherries', 'doughnut', 'grapes']

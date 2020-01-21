@@ -10,7 +10,8 @@ a python discord bot with Markov chain responses, slots, and more
 - **!wisdom** - generate fake deepak chopra quote
 - **!cbs** - generate corporate bulls**t
 - **!lmgtfy** *\<search>* - generate lmgtfy link
-- **!joke** - get random dad joke
+- **!joke** - random dad joke
+- **!shiba** - random shiba image
 - **!ping** - test bot latency
 
 ## Admin Commands

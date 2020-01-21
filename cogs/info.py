@@ -35,7 +35,8 @@ class Info(commands.Cog):
         command_list2 = (
             '**!sponge** *<message>* - spongemock text\n'
             '**!lmgtfy** *<search>* - generate lmgtfy link\n'
-            '**!joke** - get random joke\n'
+            '**!joke** - random joke\n'
+            '**!shiba** - random shiba image\n'
             '**!ping** - test bot latency'
         )
         embed = discord.Embed(
