@@ -19,7 +19,7 @@ class Info(commands.Cog):
         milliseconds = int(round(latency * 1000))
 
         embed = discord.Embed(colour=discord.Colour.green())
-        embed.add_field(name=f'*Pong!*', value=f'*Latency:* **{milliseconds}ms**')
+        embed.add_field(name=f'Pong!', value=f'*Latency:* **{milliseconds}ms**')
         await ctx.send(embed=embed)
 
     @commands.command()
