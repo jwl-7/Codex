@@ -48,7 +48,7 @@ class Info(commands.Cog):
         try:
             await ctx.author.send(embed=embed)
         except discord.Forbidden:
-            print(f'[ERROR] Failed to send !help list to {ctx.author.name}')
+            return print(f'[ERROR] Failed to send !help list to {ctx.author.name}')
 
 
 def setup(bot):

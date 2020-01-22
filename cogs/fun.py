@@ -32,8 +32,7 @@ class Fun(commands.Cog):
         try:
             r.raise_for_status()
         except requests.exceptions.HTTPError as error:
-            print(f'[ERROR] {error}')
-            return -1
+            return print(f'[ERROR] {error}')
 
         await ctx.send(r.text)
 
@@ -52,8 +51,7 @@ class Fun(commands.Cog):
         try:
             r.raise_for_status()
         except requests.exceptions.HTTPError as error:
-            print(f'[ERROR] {error}')
-            return -1
+            return print(f'[ERROR] {error}')
 
         image = r.json()['message']
         embed = discord.Embed(colour=discord.Colour.blue())
