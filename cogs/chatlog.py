@@ -24,7 +24,8 @@ class ChatLog(commands.Cog):
             return
         else:
             record = self.clean_message(message.clean_content)
-            self.db.add_item(record)
+            if record:
+                self.db.add_item(record)
 
     def clean_message(self, message):
         """Reformats message to be used in the chain.
