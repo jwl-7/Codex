@@ -13,6 +13,31 @@ class Info(commands.Cog):
         self.bot = bot
 
     @commands.command()
+    async def about(self, ctx):
+        """!about - Get information on Codex."""
+        features = (
+            '**Features**\n'
+            '- Ask the Magic 8-ball\n'
+            '- Play fruit emoji slots\n'
+            '- Generate tons of corporate/tech jargon\n'
+            '- Markov chain sentence responses\n'
+            '- ...and much more!'
+            )
+
+        embed = discord.Embed(colour=discord.Colour.purple())
+        embed.set_author(
+            name='Codex BOT - Information',
+            icon_url='https://i.imgur.com/wSg6r3n.jpg'
+        )
+        embed.add_field(
+            name=features,
+            value='[🤖 View on GitHub](https://github.com/jwl-7/Codex)'
+        )
+        embed.set_image(url='https://i.imgur.com/cbeWRSU.gif')
+        embed.set_footer(text='Made by JWL#5526', icon_url='https://avatars2.githubusercontent.com/u/37751085?s=460&v=4')
+        await ctx.send(embed=embed)
+
+    @commands.command()
     @commands.has_permissions(administrator=True)
     async def adminhelp(self, ctx):
         """!adminhelp - DM bot admin command list."""
@@ -38,6 +63,7 @@ class Info(commands.Cog):
     async def help(self, ctx):
         """!help - DM bot command list."""
         info_cmds = (
+            '**!about** - codex bot information\n'
             '**!help** - dm bot command list\n'
             '**!ping** - test bot latency'
             )
