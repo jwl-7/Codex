@@ -13,16 +13,6 @@ class Info(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def ping(self, ctx):
-        """!ping - Bot Response Time"""
-        latency = self.bot.latency
-        milliseconds = int(round(latency * 1000))
-
-        embed = discord.Embed(colour=discord.Colour.green())
-        embed.add_field(name=f'Pong!', value=f'*Latency:* **{milliseconds}ms**')
-        await ctx.send(embed=embed)
-
-    @commands.command()
     async def help(self, ctx):
         """!help - Bot Command List"""
         command_list1 = (
@@ -49,6 +39,16 @@ class Info(commands.Cog):
             await ctx.author.send(embed=embed)
         except discord.Forbidden:
             return print(f'[ERROR] Failed to send !help list to {ctx.author.name}')
+
+    @commands.command()
+    async def ping(self, ctx):
+        """!ping - Bot Response Time"""
+        latency = self.bot.latency
+        milliseconds = int(round(latency * 1000))
+
+        embed = discord.Embed(colour=discord.Colour.green())
+        embed.add_field(name=f'Pong!', value=f'*Latency:* **{milliseconds}ms**')
+        await ctx.send(embed=embed)
 
 
 def setup(bot):
