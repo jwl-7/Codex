@@ -5,14 +5,28 @@ This module contains help commands.
 
 
 import os
+import time
 
 import discord
+import psutil
 from discord.ext import commands
 
 
 class Info(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+
+    @commands.Cog.listener()
+    async def on_message(self, message):
+        if message.author.bot:
+            self.bot.messages_sent += 1
+        self.bot.message_count += 1
+
+        if (
+            self.bot.user.name.lower() in message.content.lower() or
+            self.bot.user.mentioned_in(message)
+        ):
+            self.bot.mentions_count += 1
 
     @commands.command()
     async def about(self, ctx):
@@ -71,7 +85,8 @@ class Info(commands.Cog):
         info_cmds = (
             '**!about** - codex bot information\n'
             '**!help** - dm bot command list\n'
-            '**!ping** - test bot latency'
+            '**!ping** - test bot latency\n'
+            '**!status** - codex bot stats'
             )
         fun_cmds = (
             '**!8ball** - magic 8-ball\n'
@@ -111,7 +126,34 @@ class Info(commands.Cog):
         milliseconds = int(round(latency * 1000))
 
         embed = discord.Embed(colour=discord.Colour.green())
-        embed.add_field(name=f'Pong!', value=f'*Latency:* **{milliseconds}ms**')
+        embed.add_field(name='Pong!', value=f'*Latency:* **{milliseconds}ms**')
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def status(self, ctx):
+        """!status - Get stats on Codex."""
+        uptime = time.time() - self.bot.uptime
+        minutes, seconds = divmod(uptime, 60)
+        hours, minutes = divmod(minutes, 60)
+
+        process = psutil.Process(os.getpid())
+        mem_usage = process.memory_info().rss
+        mem_usage /= 1024 ** 2
+
+        embed = discord.Embed(colour=discord.Colour.green())
+        embed.set_author(
+            name='Codex BOT - Status',
+            icon_url='https://i.imgur.com/wSg6r3n.jpg'
+        )
+        embed.add_field(
+            name='🕖 Uptime',
+            value=f'{int(hours)} hours, {int(minutes)} minutes, {int(seconds)} seconds',
+            inline=False
+        )
+        embed.add_field(name='📥 Messages Received', value=f'{self.bot.message_count}')
+        embed.add_field(name='📤 Messages Sent', value=f'{self.bot.messages_sent}')
+        embed.add_field(name='🏷️ Mentions', value=f'{self.bot.mentions_count}')
+        embed.add_field(name='💾 Memory Usage', value=f'{mem_usage:.2f} MiB')
         await ctx.send(embed=embed)
 
 
