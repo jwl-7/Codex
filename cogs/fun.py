@@ -18,7 +18,7 @@ class Fun(commands.Cog):
 
     @commands.command()
     async def coin(self, ctx):
-        """!coin - Coin Flip"""
+        """!coin - Flip a coin."""
         faces = ['Heads!', 'Tails!']
         outcome = random.choice(faces)
 
@@ -27,8 +27,19 @@ class Fun(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command()
+    async def horoscope(self, ctx):
+        """!horoscope <sunsign> - Get daily horoscope."""
+        r = requests.get('https://icanhazdadjoke.com/', headers={'Accept': 'text/plain'})
+        try:
+            r.raise_for_status()
+        except requests.exceptions.HTTPError as error:
+            return print(f'[ERROR] {error}')
+
+        await ctx.send(r.text)
+
+    @commands.command()
     async def joke(self, ctx):
-        """!joke - Random dad joke"""
+        """!joke - Get random dad joke."""
         r = requests.get('https://icanhazdadjoke.com/', headers={'Accept': 'text/plain'})
         try:
             r.raise_for_status()
@@ -39,7 +50,7 @@ class Fun(commands.Cog):
 
     @commands.command()
     async def lmgtfy(self, ctx, *, search):
-        """!lmgtfy <search> - Create lmgtfy link"""
+        """!lmgtfy <search> - Create lmgtfy link."""
         await ctx.send(
             '<https://lmgtfy.com/?iie=1&q={}>'
             .format(urllib.parse.quote_plus(search))
@@ -47,7 +58,7 @@ class Fun(commands.Cog):
 
     @commands.command()
     async def shiba(self, ctx):
-        """!shiba - Random Shiba"""
+        """!shiba - Get random Shiba image."""
         r = requests.get('https://dog.ceo/api/breed/shiba/images/random')
         try:
             r.raise_for_status()
@@ -61,7 +72,7 @@ class Fun(commands.Cog):
 
     @commands.command()
     async def slots(self, ctx):
-        """!slots - Fruit Emojis Slot Machine"""
+        """!slots - Play fruit emojis slot machine."""
         slots = ['apple', 'watermelon', 'taco', 'cherries', 'doughnut', 'grapes']
         slot1 = slots[random.randint(0, 5)]
         slot2 = slots[random.randint(0, 5)]
@@ -92,7 +103,7 @@ class Fun(commands.Cog):
 
     @commands.command()
     async def sponge(self, ctx, *, message):
-        """!sponge <message> - Converts message to SpongeBob meme text."""
+        """!sponge <message> - Convert message to SpongeBob meme text."""
         text = message
         sponge_text = ''
         await ctx.message.delete()

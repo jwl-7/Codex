@@ -14,7 +14,7 @@ class Info(commands.Cog):
 
     @commands.command()
     async def help(self, ctx):
-        """!help - Bot Command List"""
+        """!help - DM bot command list."""
         command_list1 = (
             '**!8ball** - magic 8-ball\n'
             '**!coin** - heads or tails\n'
@@ -42,7 +42,7 @@ class Info(commands.Cog):
 
     @commands.command()
     async def ping(self, ctx):
-        """!ping - Bot Response Time"""
+        """!ping - Test bot latency."""
         latency = self.bot.latency
         milliseconds = int(round(latency * 1000))
 

@@ -30,7 +30,7 @@ class ChatLog(commands.Cog):
                 self.db.add_item(record)
 
     def clean_message(self, message):
-        """Cleans the message to only words.
+        """Cleans the message of unnecessary information.
 
         Args:
             message (str): Message from the chat to modify.
