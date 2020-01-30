@@ -6,6 +6,7 @@ a python discord bot with Markov chain responses, slots, and more
     - **!about** - codex bot information
     - **!help** - dm bot command list
     - **!ping** - test bot latency
+    - **!status** - codex bot stats
 
 * Fun
     - **!8ball** - magic 8-ball
