@@ -13,28 +13,60 @@ class Info(commands.Cog):
         self.bot = bot
 
     @commands.command()
+    @commands.has_permissions(administrator=True)
+    async def adminhelp(self, ctx):
+        """!adminhelp - DM bot admin command list."""
+        admin_cmds = (
+            '**!admincheck** - bot owner check\n'
+            '**!adminhelp** - dm bot admin command list\n'
+            '**!load** *<name>* - load extension\n'
+            '**!unload** *<name>* - unload extension\n'
+            '**!reload** *<name>* - reload extension'
+            )
+
+        embed = discord.Embed(
+            colour=discord.Colour.red(),
+            title='Codex BOT - Admin Command List'
+        )
+        embed.add_field(name=admin_cmds, value='\u200b')
+        try:
+            await ctx.author.send(embed=embed)
+        except discord.Forbidden:
+            return print(f'[ERROR] Failed to send !adminhelp list to {ctx.author.name}')
+
+    @commands.command()
     async def help(self, ctx):
         """!help - DM bot command list."""
-        command_list1 = (
+        info_cmds = (
+            '**!help** - dm bot command list\n'
+            '**!ping** - test bot latency'
+            )
+        fun_cmds = (
             '**!8ball** - magic 8-ball\n'
             '**!coin** - heads or tails\n'
-            '**!slots** - slot machine\n'
-            '**!wisdom** - generate fake chopra quote\n'
-            '**!cbs** - generate corporate bullshit\n'
-            )
-        command_list2 = (
-            '**!sponge** *<message>* - spongemock text\n'
-            '**!lmgtfy** *<search>* - generate lmgtfy link\n'
-            '**!joke** - random joke\n'
+            '**!horoscope** *<sunsign>* - daily horoscope\n'
+            '**!joke** - random dad joke\n'
+            '**!lmgtfy** *<search>* - create lmgtfy link\n'
             '**!shiba** - random shiba image\n'
-            '**!ping** - test bot latency'
-        )
+            '**!slots** - fruit emojis slot machine\n'
+            '**!sponge** *<message>* - convert message to spongemock text'
+            )
+        generators_cmds = (
+            '**!audiophile** - generate hipster audio jargon\n'
+            '**!corporate** - generate corporate bullshit\n'
+            '**!education** - generate educational nonsense\n'
+            '**!excuse** - generate the perfect excuse\n'
+            '**!technology** - generate hollywood tech jargon\n'
+            '**!wisdom** - generate deepak chopra quote'
+            )
+
         embed = discord.Embed(
             colour=discord.Colour.purple(),
             title='Codex BOT - Command List'
         )
-        embed.add_field(name=command_list1, value='\u200b')
-        embed.add_field(name=command_list2, value='\u200b')
+        embed.add_field(name='Info', value=info_cmds, inline=False)
+        embed.add_field(name='Fun', value=fun_cmds, inline=False)
+        embed.add_field(name='Generators', value=generators_cmds, inline=False)
         try:
             await ctx.author.send(embed=embed)
         except discord.Forbidden:
