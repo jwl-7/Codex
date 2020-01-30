@@ -4,7 +4,7 @@ This file contains the words for the Deepak Chopra quote generator.
 """
 
 
-words1 = [
+words0 = [
     'The universe',
     'Your consciousness',
     'Quantum physics',
@@ -63,7 +63,7 @@ words1 = [
     'Innocence'
     ]
 
-words2 = [
+words1 = [
     'relies on',
     'depends on',
     'embraces',
@@ -120,7 +120,7 @@ words2 = [
     'results from'
     ]
 
-words3 = [
+words2 = [
     'your own',
     'infinite',
     'self-righteous',
@@ -175,7 +175,7 @@ words3 = [
     'innumerable'
     ]
 
-words4 = [
+words3 = [
     'joy',
     'creativity',
     'life',
