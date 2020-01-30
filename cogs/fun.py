@@ -60,6 +60,21 @@ class Fun(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command()
+    async def dice(self, ctx):
+        """!dice - Roll two dice."""
+        die1 = random.randint(1, 6)
+        die2 = random.randint(1, 6)
+        total = die1 + die2
+
+        embed = discord.Embed(colour=discord.Colour.blue())
+        embed.set_author(name='Dice Roller', icon_url='https://i.imgur.com/rkfXx3q.png')
+        embed.add_field(
+            name=f'*{ctx.author.name} rolls the dice...*',
+            value=f'**{die1}** and **{die2}** for a total of **{total}**'
+        )
+        await ctx.send(embed=embed)
+
+    @commands.command()
     async def horoscope(self, ctx, sign):
         """!horoscope <sunsign> - Get daily horoscope."""
         emojis = {
