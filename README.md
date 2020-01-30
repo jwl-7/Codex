@@ -27,7 +27,8 @@ a python discord bot with Markov chain responses, slots, and more
     - **!wisdom** - generate deepak chopra quote
 
 * Text
-    - **!fliptext** *\<message>* - flip text upside down/backwards
+    - **!ascii** *\<message>* - convert message to ascii art
+    - **!fliptext** *\<message>* - flip message upside down/backwards
     - **!sponge** *\<message>* - convert message to spongemock text
 
 ## Admin Commands

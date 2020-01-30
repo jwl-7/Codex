@@ -107,7 +107,8 @@ class Info(commands.Cog):
             '**!wisdom** - generate deepak chopra quote'
             )
         text_cmds = (
-            '**!fliptext** *<message>* - flip text upside down/backwards\n'
+            '**!ascii** *<message>* - convert message to ascii art\n'
+            '**!fliptext** *<message>* - flip message upside down/backwards\n'
             '**!sponge** *<message>* - convert message to spongemock text'
             )
 
