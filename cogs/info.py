@@ -96,8 +96,7 @@ class Info(commands.Cog):
             '**!joke** - random dad joke\n'
             '**!lmgtfy** *<search>* - create lmgtfy link\n'
             '**!shiba** - random shiba image\n'
-            '**!slots** - fruit emojis slot machine\n'
-            '**!sponge** *<message>* - convert message to spongemock text'
+            '**!slots** - fruit emojis slot machine'
             )
         generators_cmds = (
             '**!audiophile** - generate hipster audio jargon\n'
@@ -107,6 +106,10 @@ class Info(commands.Cog):
             '**!technology** - generate hollywood tech jargon\n'
             '**!wisdom** - generate deepak chopra quote'
             )
+        text_cmds = (
+            '**!fliptext** *<message>* - flip text upside down/backwards\n'
+            '**!sponge** *<message>* - convert message to spongemock text'
+            )
 
         embed = discord.Embed(
             colour=discord.Colour.purple(),
@@ -115,6 +118,7 @@ class Info(commands.Cog):
         embed.add_field(name='Info', value=info_cmds, inline=False)
         embed.add_field(name='Fun', value=fun_cmds, inline=False)
         embed.add_field(name='Generators', value=generators_cmds, inline=False)
+        embed.add_field(name='Text', value=text_cmds, inline=False)
         try:
             await ctx.author.send(embed=embed)
         except discord.Forbidden:

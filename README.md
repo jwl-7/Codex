@@ -17,7 +17,6 @@ a python discord bot with Markov chain responses, slots, and more
     - **!lmgtfy** *\<search>* - create lmgtfy link
     - **!shiba** - random shiba image
     - **!slots** - fruit emojis slot machine
-    - **!sponge** *\<message>* - convert message to spongemock text
 
 * Generators
     - **!audiophile** - generate hipster audio jargon
@@ -26,6 +25,10 @@ a python discord bot with Markov chain responses, slots, and more
     - **!excuse** - generate the perfect excuse
     - **!technology** - generate hollywood tech jargon
     - **!wisdom** - generate deepak chopra quote
+
+* Text
+    - **!fliptext** *\<message>* - flip text upside down/backwards
+    - **!sponge** *\<message>* - convert message to spongemock text
 
 ## Admin Commands
 - **!admincheck** - bot owner check
