@@ -36,8 +36,8 @@ a python discord bot with Markov chain responses, slots, and more
 - words grabbed from chatlog stored in sqlite database
 - sentences become more amusing overtime as bot "learns" more words
 
-## Screenshots
-[![codex-chatbot.png](https://i.imgur.com/dMXa1q0.png)](https://imgur.com/dMXa1q0)
+## Preview
+[![codex-chatbot.png](https://i.imgur.com/cbeWRSU.gif)](https://imgur.com/cbeWRSU)
 
 ## Requirements
 * Python 3.8+
