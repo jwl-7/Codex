@@ -3,6 +3,7 @@ a python discord bot with Markov chain responses, slots, and more
 
 ## Commands
 * Info
+    - **!about** - codex bot information
     - **!help** - dm bot command list
     - **!ping** - test bot latency
 
