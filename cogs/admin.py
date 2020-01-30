@@ -29,13 +29,13 @@ class Admin(commands.Cog):
         embed = discord.Embed(colour=discord.Colour.red())
         if is_admin:
             embed.add_field(
-                name=f'OMG JWL!!!',
-                value=f'**It\'s you master! You ARE the admin!**'
+                name='OMG JWL!!!',
+                value='**It\'s you master! You ARE the admin!**'
             )
         else:
             embed.add_field(
                 name=f'Who are you, {ctx.author.name}?',
-                value=f'**You are NOT the admin!**'
+                value='**You are NOT the admin!**'
             )
         await ctx.send(embed=embed)
 
@@ -48,14 +48,14 @@ class Admin(commands.Cog):
             self.bot.load_extension(f'cogs.{name}')
         except discord.DiscordException:
             embed.add_field(
-                name=f'Admin',
+                name='Admin',
                 value=f'[ERROR] *Failed to load extension* **{name}.py**'
             )
             return await ctx.send(embed=embed)
 
         print(f'[ADMIN] Loaded extension {name}.py')
         embed.add_field(
-            name=f'Admin',
+            name='Admin',
             value=f'*Loaded extension* **{name}.py**'
         )
         await ctx.send(embed=embed)
@@ -69,14 +69,14 @@ class Admin(commands.Cog):
             self.bot.unload_extension(f'cogs.{name}')
         except discord.DiscordException:
             embed.add_field(
-                name=f'Admin',
+                name='Admin',
                 value=f'[ERROR] *Failed to unload extension* **{name}.py**'
             )
             return await ctx.send(embed=embed)
 
         print(f'[ADMIN] Unloaded extension {name}.py')
         embed.add_field(
-            name=f'Admin',
+            name='Admin',
             value=f'*Unloaded extension* **{name}.py**'
         )
         await ctx.send(embed=embed)
@@ -90,14 +90,14 @@ class Admin(commands.Cog):
             self.bot.reload_extension(f'cogs.{name}')
         except discord.DiscordException:
             embed.add_field(
-                name=f'Admin',
+                name='Admin',
                 value=f'[ERROR] *Failed to reload extension* **{name}.py**'
             )
             return await ctx.send(embed=embed)
 
         print(f'[ADMIN] Reloaded extension {name}.py')
         embed.add_field(
-            name=f'Admin',
+            name='Admin',
             value=f'*Reloaded extension* **{name}.py**'
         )
         await ctx.send(embed=embed)

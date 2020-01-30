@@ -37,7 +37,7 @@ class Generators(commands.Cog):
             sentence = sentence.replace(s, words[x])
 
         embed = discord.Embed(colour=discord.Colour.blue())
-        embed.add_field(name=f'Audio Jargon', value=f'**{sentence}**')
+        embed.add_field(name='Audio Jargon', value=f'**{sentence}**')
         await ctx.send(embed=embed)
 
     @commands.command()
@@ -50,7 +50,7 @@ class Generators(commands.Cog):
         statement = f'{adverb} {verb} {adjective} {noun}'
 
         embed = discord.Embed(colour=discord.Colour.blue())
-        embed.add_field(name=f'Corporate Bullshit', value=f'**{statement}**')
+        embed.add_field(name='Corporate Bullshit', value=f'**{statement}**')
         await ctx.send(embed=embed)
 
     @commands.command()
@@ -63,7 +63,7 @@ class Generators(commands.Cog):
         statement = f'We will {verb} {adjective} {noun} {phrase}.'
 
         embed = discord.Embed(colour=discord.Colour.blue())
-        embed.add_field(name=f'Educational Nonsense', value=f'**{statement}**')
+        embed.add_field(name='Educational Nonsense', value=f'**{statement}**')
         await ctx.send(embed=embed)
 
     @commands.command()
@@ -82,7 +82,7 @@ class Generators(commands.Cog):
             sentence = sentence.replace(s, words[x])
 
         embed = discord.Embed(colour=discord.Colour.blue())
-        embed.add_field(name=f'Perfect Excuse', value=f'**{sentence}**')
+        embed.add_field(name='Perfect Excuse', value=f'**{sentence}**')
         await ctx.send(embed=embed)
 
     @commands.command()
@@ -101,7 +101,7 @@ class Generators(commands.Cog):
             sentence = sentence.replace(s, words[x])
 
         embed = discord.Embed(colour=discord.Colour.blue())
-        embed.add_field(name=f'Tech Jargon', value=f'**{sentence}**')
+        embed.add_field(name='Tech Jargon', value=f'**{sentence}**')
         await ctx.send(embed=embed)
 
     @commands.command()
@@ -114,7 +114,7 @@ class Generators(commands.Cog):
         quote = f'{part0} {part1} {part2} {part3}.'
 
         embed = discord.Embed(colour=discord.Colour.blue())
-        embed.add_field(name=f'Chopra Wisdom', value=f'**{quote}**')
+        embed.add_field(name='Chopra Wisdom', value=f'**{quote}**')
         await ctx.send(embed=embed)
 
 
