@@ -5,14 +5,16 @@ This module includes jargon generators.
 
 
 import random
+
 import discord
+from discord.ext import commands
+
 import jargon.audio as audio
 import jargon.chopra as chopra
 import jargon.corporate as corp
 import jargon.education as edu
 import jargon.excuses as excuses
 import jargon.technology as tech
-from discord.ext import commands
 
 
 class Generators(commands.Cog):
