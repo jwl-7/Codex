@@ -27,15 +27,38 @@ class Fun(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command()
-    async def horoscope(self, ctx):
+    async def horoscope(self, ctx, sign):
         """!horoscope <sunsign> - Get daily horoscope."""
-        r = requests.get('https://icanhazdadjoke.com/', headers={'Accept': 'text/plain'})
+        emojis = {
+            'Aries': '♈',
+            'Taurus': '♉',
+            'Gemini': '♊',
+            'Cancer': '♋',
+            'Leo': '♌',
+            'Virgo': '♍',
+            'Libra': '♎',
+            'Scorpio': '♏',
+            'Sagitarrius': '♐',
+            'Capricorn': '♑',
+            'Aquarius': '♒',
+            'Pisces': '♓'
+        }
+        sign = sign.lower().capitalize()
+
+        r = requests.get(f'http://horoscope-api.herokuapp.com/horoscope/today/{sign}')
         try:
             r.raise_for_status()
         except requests.exceptions.HTTPError as error:
             return print(f'[ERROR] {error}')
 
-        await ctx.send(r.text)
+        astrology = r.json()['horoscope']
+        embed = discord.Embed(title=f'{emojis[sign]} {sign}', colour=discord.Colour.gold())
+        embed.set_author(name='Horoscope', icon_url='https://i.imgur.com/MWu59YN.png')
+        embed.add_field(
+            name=f'*{ctx.author.name}, your daily horoscope is...*',
+            value=f'**{astrology}**'
+        )
+        await ctx.send(embed=embed)
 
     @commands.command()
     async def joke(self, ctx):
@@ -82,7 +105,7 @@ class Fun(commands.Cog):
         slot_spin = f'|\t:{slot1}:\t|\t:{slot2}:\t|\t:{slot3}:\t|\t:{slot4}:\t|'
         jackpot = '$$$ !!! JACKPOT !!! $$$'
 
-        embed = discord.Embed(colour=discord.Colour.blue())
+        embed = discord.Embed(colour=discord.Colour.gold())
         embed.set_author(name='Slot Machine', icon_url='https://i.imgur.com/8oGuoyq.png')
         embed.add_field(
             name=f'*{ctx.author.name} pulls the slot machine handle...*',
