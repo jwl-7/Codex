@@ -6,8 +6,10 @@ This module records the chat messages in the SQLite database.
 
 import re
 import string
+
 import discord
 from discord.ext import commands
+
 from db.dbhelper import Database
 
 

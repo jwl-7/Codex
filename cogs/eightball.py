@@ -5,6 +5,7 @@ This module lets the bot tell accurate fortunes.
 
 
 import random
+
 import discord
 from discord.ext import commands
 

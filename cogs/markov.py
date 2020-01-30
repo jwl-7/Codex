@@ -7,8 +7,10 @@ This module uses words from the database to construct fun sentences.
 import random
 import re
 import string
+
 import discord
 from discord.ext import commands
+
 from db.dbhelper import Database
 
 

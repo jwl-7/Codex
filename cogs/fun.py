@@ -5,9 +5,10 @@ This module includes fun/simple commands.
 
 
 import random
+import urllib.parse
+
 import requests
 import discord
-import urllib.parse
 from discord.ext import commands
 
 

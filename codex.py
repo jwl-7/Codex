@@ -4,6 +4,7 @@ This module contains the core functionality of the bot.
 """
 
 import os
+
 import discord
 import yaml
 from discord.ext import commands
