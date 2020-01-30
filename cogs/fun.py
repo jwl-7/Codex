@@ -55,6 +55,7 @@ class Fun(commands.Cog):
         outcome = random.choice(faces)
 
         embed = discord.Embed(colour=discord.Colour.blue())
+        embed.set_author(name='Coin Flip', icon_url='https://i.imgur.com/jQX05l8.png')
         embed.add_field(name=f'*{ctx.author.name}, the coin lands...*', value=f'**{outcome}**')
         await ctx.send(embed=embed)
 
