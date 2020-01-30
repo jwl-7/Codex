@@ -11,6 +11,7 @@ a python discord bot with Markov chain responses, slots, and more
 * Fun
     - **!8ball** - magic 8-ball
     - **!coin** - heads or tails
+    - **!dice** - roll two dice
     - **!horoscope** *\<sunsign>* - daily horoscope
     - **!joke** - random dad joke
     - **!lmgtfy** *\<search>* - create lmgtfy link

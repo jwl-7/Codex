@@ -91,6 +91,7 @@ class Info(commands.Cog):
         fun_cmds = (
             '**!8ball** - magic 8-ball\n'
             '**!coin** - heads or tails\n'
+            '**!dice** - roll two dice\n'
             '**!horoscope** *<sunsign>* - daily horoscope\n'
             '**!joke** - random dad joke\n'
             '**!lmgtfy** *<search>* - create lmgtfy link\n'
