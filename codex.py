@@ -5,6 +5,7 @@ This module contains the core functionality of the bot.
 
 
 import os
+import time
 
 import discord
 import yaml
@@ -24,6 +25,11 @@ async def on_ready():
     print(f'BOT: {bot.user.name}')
     print(f'ID: {bot.user.id}')
     print('-----------------------')
+
+    bot.uptime = time.time()
+    bot.message_count = 0
+    bot.messages_sent = 0
+    bot.mentions_count = 0
 
 
 def main():
