@@ -4,6 +4,8 @@ This module contains help commands.
 """
 
 
+import os
+
 import discord
 from discord.ext import commands
 
@@ -39,6 +41,7 @@ class Info(commands.Cog):
             icon_url='https://avatars2.githubusercontent.com/u/37751085?s=460&v=4'
         )
         await ctx.send(embed=embed)
+        print(os.getpid())
 
     @commands.command()
     @commands.has_permissions(administrator=True)
