@@ -18,7 +18,7 @@ class Fun(commands.Cog):
 
     @commands.command(name='8ball')
     async def _8ball(self, ctx):
-        """!8ball - Magic 8-Ball"""
+        """!8ball - Ask the Magic 8-Ball."""
         responses = [
             'It is certain.',
             'It is decidedly so.',
