@@ -26,6 +26,7 @@ a python discord bot with Markov chain responses, slots, and more
 
 ## Admin Commands
 - **!admincheck** - bot owner check
+- **!adminhelp** - dm bot admin command list
 - **!load** *\<name>* - load extension
 - **!unload** *\<name>* - unload extension
 - **!reload** *\<name>* - reload extension
