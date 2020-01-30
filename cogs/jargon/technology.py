@@ -4,7 +4,7 @@ This file contains the words for the hollywood tech jargon generator.
 """
 
 
-words1 = [
+words0 = [
     'AAC',
     'ADP',
     'AGP',
@@ -53,7 +53,7 @@ words1 = [
     'Y2K'
     ]
 
-words2 = [
+words1 = [
     '1080p',
     '56k',
     'analog',
@@ -83,7 +83,7 @@ words2 = [
     'wireless'
     ]
 
-words3 = [
+words2 = [
     'address',
     'alarm',
     'antenna',
@@ -122,7 +122,7 @@ words3 = [
     'virus'
     ]
 
-words4 = [
+words3 = [
     'attach',
     'back up',
     'bypass',
@@ -150,7 +150,7 @@ words4 = [
     'transmit'
     ]
 
-words5 = [
+words4 = [
     'attaching',
     'backing up',
     'bypassing',
@@ -178,7 +178,7 @@ words5 = [
     'transmitting'
     ]
 
-phrases = [
+sentences = [
     "I'll {3} the {1} {0} {2}, that should {3} the {0} {2}!",
     "If we {3} the {2}, we can get to the {0} {2} through the {1} {0} {2}!",
     "My {0} {2} is down, our only choice is to {3} and {3} the {1} {2}!",

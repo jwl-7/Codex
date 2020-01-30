@@ -191,7 +191,7 @@ nouns = [
     'enduring understandings',
     'engagement structures',
     'enrichment',
-    'ESLR's',
+    'ESLR\'s',
     'experiences',
     'explicit direct instruction',
     'facilitators',

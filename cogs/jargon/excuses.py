@@ -4,7 +4,7 @@ This file contains the words for the perfect excuse generator.
 """
 
 
-words1 = [
+words0 = [
     'boss',
     'brother',
     'butler',
@@ -35,7 +35,7 @@ words1 = [
     'son\'s girlfriend'
     ]
 
-words2 = [
+words1 = [
     'accidentally',
     'admittedly',
     'angrily',
@@ -62,7 +62,7 @@ words2 = [
     'viciously'
     ]
 
-words3 = [
+words2 = [
     'application',
     'assignment',
     'composition',
@@ -88,7 +88,7 @@ words3 = [
     'thesis'
     ]
 
-words4 = [
+words3 = [
     'ate',
     'blew up',
     'broke',
@@ -117,7 +117,7 @@ words4 = [
     'tore up'
     ]
 
-words5 = [
+words4 = [
     'add to',
     'commit to',
     'complete',
@@ -138,7 +138,7 @@ words5 = [
     'write'
     ]
 
-phrases = [
+sentences = [
     "After my {0} {1} {3} my {2}, I obviously couldn't {4} it.",
     "After my {0} {3} my {2}, I {1} {3} their {2}, so neither of us can {4} it.",
     "I couldn't {4} my {2} because my {0} {3} it!",

@@ -4,7 +4,7 @@ This file contains the words for the audio jargon generator.
 """
 
 
-words1 = [
+words0 = [
     '48K',
     'AAC',
     'AC-3',
@@ -39,7 +39,7 @@ words1 = [
     'WMA'
     ]
 
-words2 = [
+words1 = [
     'aliased',
     'ambient',
     'analog',
@@ -70,7 +70,7 @@ words2 = [
     'virtual'
     ]
 
-words3 = [
+words2 = [
     'amplifier',
     'bitrate',
     'channel',
@@ -106,7 +106,7 @@ words3 = [
     'waveform'
     ]
 
-words4 = [
+words3 = [
     'adjust',
     'amplify',
     'attenuate',
@@ -132,7 +132,7 @@ words4 = [
     'sweep'
     ]
 
-words5 = [
+words4 = [
     'amplifying',
     'attenuating',
     'autotuning',
@@ -156,7 +156,7 @@ words5 = [
     'sweeping'
     ]
 
-phrases = [
+sentences = [
     "Ever since {4} the {2} on my {2}, I can totally {3} more {1} {2}s in my {2}.",
     "I like to {3} my {1} {1} {2} through my {0} {2}, it's easier to {3} that way.",
     "I've never liked their {1} {2}s, my {1} {0} {2} can {3} so much better.",
