@@ -172,20 +172,6 @@ class Fun(commands.Cog):
             embed.add_field(name=slot_spin, value='\u200b')
         await ctx.send(embed=embed)
 
-    @commands.command()
-    async def sponge(self, ctx, *, message):
-        """!sponge <message> - Convert message to SpongeBob meme text."""
-        text = message
-        sponge_text = ''
-        await ctx.message.delete()
-        for i, char in enumerate(text):
-            sponge_text += char.upper() if i & 1 else char.lower()
-
-        embed = discord.Embed(colour=discord.Colour.gold())
-        embed.set_author(name='Spongemock', icon_url='https://i.imgur.com/TIXAQhB.png')
-        embed.add_field(name=f'*{ctx.author.name} mocks...*', value=f'**{sponge_text}**')
-        await ctx.send(embed=embed)
-
 
 def setup(bot):
     bot.add_cog(Fun(bot))
