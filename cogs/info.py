@@ -69,9 +69,10 @@ class Info(commands.Cog):
             '**!reload** *<name>* - reload extension'
             )
 
-        embed = discord.Embed(
-            colour=discord.Colour.red(),
-            title='Codex BOT - Admin Command List'
+        embed = discord.Embed(colour=discord.Colour.red())
+        embed.set_author(
+            name='Codex BOT - Admin Command List',
+            icon_url='https://i.imgur.com/wSg6r3n.jpg'
         )
         embed.add_field(name=admin_cmds, value='\u200b')
         try:
@@ -112,9 +113,10 @@ class Info(commands.Cog):
             '**!sponge** *<message>* - convert message to spongemock text'
             )
 
-        embed = discord.Embed(
-            colour=discord.Colour.purple(),
-            title='Codex BOT - Command List'
+        embed = discord.Embed(colour=discord.Colour.purple())
+        embed.set_author(
+            name='Codex BOT - Command List',
+            icon_url='https://i.imgur.com/wSg6r3n.jpg'
         )
         embed.add_field(name='Info', value=info_cmds, inline=False)
         embed.add_field(name='Fun', value=fun_cmds, inline=False)
