@@ -112,6 +112,10 @@ class Info(commands.Cog):
             '**!fliptext** *<message>* - flip message upside down/backwards\n'
             '**!sponge** *<message>* - convert message to spongemock text'
             )
+        dictionary_cmds = (
+            '**!define** *<search>* - search merriam-webster dictionary\n'
+            '**!udefine** *<search>* - search urban dictionary'
+            )
 
         embed = discord.Embed(colour=discord.Colour.purple())
         embed.set_author(
@@ -122,6 +126,7 @@ class Info(commands.Cog):
         embed.add_field(name='Fun', value=fun_cmds, inline=False)
         embed.add_field(name='Generators', value=generators_cmds, inline=False)
         embed.add_field(name='Text', value=text_cmds, inline=False)
+        embed.add_field(name='Dictionary', value=dictionary_cmds, inline=False)
         try:
             await ctx.author.send(embed=embed)
         except discord.Forbidden:

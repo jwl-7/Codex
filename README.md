@@ -31,6 +31,10 @@ a python discord bot with Markov chain responses, slots, and more
     - **!fliptext** *\<message>* - flip message upside down/backwards
     - **!sponge** *\<message>* - convert message to spongemock text
 
+* Dictionary
+    - **!define** *\<search>* - search merriam-webster dictionary
+    - **!udefine** *\<search>* - search urban dictionary
+
 ## Admin Commands
 - **!admincheck** - bot owner check
 - **!adminhelp** - dm bot admin command list
