@@ -122,9 +122,8 @@ class Fun(commands.Cog):
     @commands.command()
     async def lmgtfy(self, ctx, *, search):
         """!lmgtfy <search> - Create lmgtfy link."""
-        await ctx.send(
-            f'<https://lmgtfy.com/?iie=1&q={urllib.parse.quote_plus(search)}>'
-        )
+        url = 'https://lmgtfy.com/?iie=1&q='
+        await ctx.send(f'<{url}{urllib.parse.quote_plus(search)}>')
 
     @commands.command()
     async def shiba(self, ctx):
