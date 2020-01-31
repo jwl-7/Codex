@@ -22,7 +22,7 @@ class Dictionary(commands.Cog):
 
     @commands.command()
     async def define(self, ctx, *, search):
-        """!define - Search Merriam-Webster Dictionary."""
+        """!define <search> - Search Merriam-Webster Dictionary."""
         url = 'https://dictionaryapi.com/api/v3/references/collegiate/json/'
         token = config['dictionary']['token']
 
@@ -52,7 +52,7 @@ class Dictionary(commands.Cog):
 
     @commands.command()
     async def udefine(self, ctx, *, search):
-        """!udefine - Search Urban Dictionary."""
+        """!udefine <search> - Search Urban Dictionary."""
         url = 'http://api.urbandictionary.com/v0/define?term='
 
         r = requests.get(f'{url}{urllib.parse.quote_plus(search)}')
