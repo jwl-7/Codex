@@ -48,7 +48,7 @@ a python discord bot with Markov chain responses, slots, and more
 - sentences become more amusing overtime as bot "learns" more words
 
 ## Preview
-[![codex-chatbot.png](https://i.imgur.com/cbeWRSU.gif)](https://imgur.com/cbeWRSU)
+[![codex-chatbot.png](https://i.imgur.com/GsFqPu8.gif)](https://imgur.com/a/VX450os)
 
 ## Requirements
 * Python 3.8+

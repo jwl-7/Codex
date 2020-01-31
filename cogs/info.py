@@ -49,7 +49,7 @@ class Info(commands.Cog):
             name=features,
             value='[🤖 View on GitHub](https://github.com/jwl-7/Codex)'
         )
-        embed.set_image(url='https://i.imgur.com/cbeWRSU.gif')
+        embed.set_image(url='https://i.imgur.com/GsFqPu8.gif')
         embed.set_footer(
             text='Made by JWL#5526',
             icon_url='https://avatars2.githubusercontent.com/u/37751085?s=460&v=4'
