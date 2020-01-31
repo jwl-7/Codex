@@ -1,4 +1,4 @@
-"""Fun Commands
+"""Fun
 
 This module includes fun/simple commands.
 """
