@@ -123,8 +123,7 @@ class Fun(commands.Cog):
     async def lmgtfy(self, ctx, *, search):
         """!lmgtfy <search> - Create lmgtfy link."""
         await ctx.send(
-            '<https://lmgtfy.com/?iie=1&q={}>'
-            .format(urllib.parse.quote_plus(search))
+            f'<https://lmgtfy.com/?iie=1&q={urllib.parse.quote_plus(search)}>'
         )
 
     @commands.command()
