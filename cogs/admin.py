@@ -4,6 +4,8 @@ This module contains utility commands for the owner.
 """
 
 
+import sys
+
 import discord
 import yaml
 from discord.ext import commands
@@ -101,6 +103,19 @@ class Admin(commands.Cog):
             value=f'*Reloaded extension* **{name}.py**'
         )
         await ctx.send(embed=embed)
+
+    @commands.command()
+    @commands.has_permissions(administrator=True)
+    async def restart(self, ctx):
+        """!restart - Restart bot."""
+        embed = discord.Embed(colour=discord.Colour.red())
+        embed.add_field(
+            name='Admin',
+            value=f'*Restarting* **Codex**...'
+        )
+        await ctx.send(embed=embed)
+        await self.bot.logout()
+        sys.exit(0)
 
 
 def setup(bot):
