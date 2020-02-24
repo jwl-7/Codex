@@ -41,6 +41,7 @@ a python discord bot with Markov chain responses, slots, and more
 - **!load** *\<name>* - load extension
 - **!unload** *\<name>* - unload extension
 - **!reload** *\<name>* - reload extension
+- **!restart** - restart bot
 
 ## Markov Sentence Generator
 - triggered when a message includes the bot name or @mentions it

@@ -66,7 +66,8 @@ class Info(commands.Cog):
             '**!adminhelp** - dm bot admin command list\n'
             '**!load** *<name>* - load extension\n'
             '**!unload** *<name>* - unload extension\n'
-            '**!reload** *<name>* - reload extension'
+            '**!reload** *<name>* - reload extension\n'
+            '**!restart** - restart bot'
             )
 
         embed = discord.Embed(colour=discord.Colour.red())
