@@ -91,7 +91,7 @@ class Fun(commands.Cog):
             'Aquarius': '♒',
             'Pisces': '♓'
         }
-        sign = sign.lower().capitalize()
+        sign = sign.capitalize()
 
         r = requests.get(f'http://horoscope-api.herokuapp.com/horoscope/today/{sign}')
         try:
