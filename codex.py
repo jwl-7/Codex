@@ -24,7 +24,7 @@ async def on_ready():
     print('--------------')
     print(f'BOT: {bot.user.name}')
     print(f'ID: {bot.user.id}')
-    print('-----------------------')
+    print('-----------------------\n')
 
     bot.uptime = time.time()
     bot.message_count = 0
