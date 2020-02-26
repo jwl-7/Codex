@@ -164,9 +164,9 @@ class Info(commands.Cog):
             value=f'{int(hours)} hours, {int(minutes)} minutes, {int(seconds)} seconds',
             inline=False
         )
-        embed.add_field(name='📥 Messages Received', value=f'{self.bot.message_count}')
-        embed.add_field(name='📤 Messages Sent', value=f'{self.bot.messages_sent}')
-        embed.add_field(name='🏷️ Mentions', value=f'{self.bot.mentions_count}')
+        embed.add_field(name='📥 Messages Received', value=self.bot.message_count)
+        embed.add_field(name='📤 Messages Sent', value=self.bot.messages_sent)
+        embed.add_field(name='🏷️ Mentions', value=self.bot.mentions_count)
         embed.add_field(name='💾 Memory Usage', value=f'{mem_usage:.2f} MiB')
         await ctx.send(embed=embed)
 
