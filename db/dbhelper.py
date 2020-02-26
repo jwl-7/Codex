@@ -17,25 +17,45 @@ class Database:
 
     def setup(self):
         """Creates new table and column."""
-        stmt = 'CREATE TABLE IF NOT EXISTS chatlog (messages text)'
+        stmt = '''
+            CREATE TABLE IF NOT EXISTS
+                chatlog(
+                    messages TEXT NOT NULL
+                )
+        '''
         self.conn.execute(stmt)
         self.conn.commit()
 
     def add_item(self, item_text):
         """Inserts item into table."""
-        stmt = 'INSERT INTO chatlog (messages) VALUES (?)'
+        stmt = '''
+            INSERT INTO
+                chatlog(messages)
+            VALUES
+                (?)
+        '''
         args = (item_text, )
         self.conn.execute(stmt, args)
         self.conn.commit()
 
     def delete_item(self, item_text):
         """Deletes item from table."""
-        stmt = 'DELETE FROM chatlog WHERE messages = (?)'
+        stmt = '''
+            DELETE FROM
+                chatlog
+            WHERE
+                messages = (?)
+        '''
         args = (item_text, )
         self.conn.execute(stmt, args)
         self.conn.commit()
 
     def get_items(self):
         """Gets all items from table."""
-        stmt = 'SELECT messages FROM chatlog'
+        stmt = '''
+            SELECT
+                messages
+            FROM
+                chatlog
+        '''
         return [x[0] for x in self.conn.execute(stmt)]
