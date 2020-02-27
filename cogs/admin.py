@@ -31,13 +31,13 @@ class Admin(commands.Cog):
         embed = discord.Embed(colour=discord.Colour.red())
         if is_admin:
             embed.add_field(
-                name='OMG JWL!!!',
-                value='**It\'s you master! You ARE the admin!**'
+                name='Admin',
+                value=f'*{ctx.author.name}*, you are the admin!'
             )
         else:
             embed.add_field(
-                name=f'Who are you, {ctx.author.name}?',
-                value='**You are NOT the admin!**'
+                name='Admin',
+                value=f'*{ctx.author.name}*, who are you?'
             )
         await ctx.send(embed=embed)
 
@@ -51,11 +51,10 @@ class Admin(commands.Cog):
         except discord.DiscordException:
             embed.add_field(
                 name='Admin',
-                value=f'[ERROR] Failed to load extension *{name}.py*'
+                value=f'Failed to load extension *{name}.py*'
             )
             return await ctx.send(embed=embed)
 
-        print(f'[ADMIN] Loaded extension {name}.py')
         embed.add_field(
             name='Admin',
             value=f'Loaded extension *{name}.py*'
@@ -72,11 +71,10 @@ class Admin(commands.Cog):
         except discord.DiscordException:
             embed.add_field(
                 name='Admin',
-                value=f'[ERROR] Failed to unload extension *{name}.py*'
+                value=f'Failed to unload extension *{name}.py*'
             )
             return await ctx.send(embed=embed)
 
-        print(f'[ADMIN] Unloaded extension {name}.py')
         embed.add_field(
             name='Admin',
             value=f'Unloaded extension *{name}.py*'
@@ -93,11 +91,10 @@ class Admin(commands.Cog):
         except discord.DiscordException:
             embed.add_field(
                 name='Admin',
-                value=f'[ERROR] Failed to reload extension *{name}.py*'
+                value=f'Failed to reload extension *{name}.py*'
             )
             return await ctx.send(embed=embed)
 
-        print(f'[ADMIN] Reloaded extension {name}.py')
         embed.add_field(
             name='Admin',
             value=f'Reloaded extension *{name}.py*'
@@ -111,7 +108,7 @@ class Admin(commands.Cog):
         embed = discord.Embed(colour=discord.Colour.red())
         embed.add_field(
             name='Admin',
-            value=f'Restarting **Codex**...'
+            value=f'Restarting *Codex*...'
         )
         await ctx.send(embed=embed)
         await self.bot.logout()
