@@ -34,12 +34,12 @@ class Dictionary(commands.Cog):
             r = requests.get(f'{url}{search}?key={token}')
             r.raise_for_status()
         except requests.exceptions.RequestException:
-            embed.add_field(name='Error', value='Failed to connect to the dictionary API')
+            embed.description = 'Failed to connect to the dictionary API'
             return await ctx.send(embed=embed)
 
         data = r.json()
         if not data or type(data[0]) is not dict:
-            embed.add_field(name='Search Failed', value=f'No definition found for *{search}*')
+            embed.description = f'No definition found for *{search}*'
             return await ctx.send(embed=embed)
 
         word = data[0]['meta']['id']
@@ -63,12 +63,12 @@ class Dictionary(commands.Cog):
             r = requests.get(f'{url}{search}')
             r.raise_for_status()
         except requests.exceptions.RequestException:
-            embed.add_field(name='Error', value='Failed to connect to the dictionary API')
+            embed.description = 'Failed to connect to the dictionary API'
             return await ctx.send(embed=embed)
 
         data = r.json()
         if not data or not data['list']:
-            embed.add_field(name='Search Failed', value=f'No definition found for *{search}*')
+            embed.description = f'No definition found for *{search}*'
             return await ctx.send(embed=embed)
 
         word = data['list'][0]['word']
@@ -79,6 +79,7 @@ class Dictionary(commands.Cog):
         embed.add_field(name=f'**Example**', value=example, inline=False)
         embed.add_field(name='**Search Result**', value=link, inline=False)
         await ctx.send(embed=embed)
+
 
 def setup(bot):
     bot.add_cog(Dictionary(bot))
