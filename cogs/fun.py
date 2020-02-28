@@ -79,7 +79,7 @@ class Fun(commands.Cog):
 
     @commands.command()
     async def horoscope(self, ctx, sign):
-        """!horoscope <sunsign> - Get daily horoscope."""
+        """!horoscope <sunsign> - Find out daily horoscope."""
         url = 'http://horoscope-api.herokuapp.com/horoscope/today/'
         icon_url = 'https://i.imgur.com/MWu59YN.png'
         sign = sign.capitalize()
@@ -116,7 +116,7 @@ class Fun(commands.Cog):
 
     @commands.command()
     async def joke(self, ctx):
-        """!joke - Get random dad joke."""
+        """!joke - Receive random dad joke."""
         url = 'https://icanhazdadjoke.com/'
         embed = discord.Embed(colour=discord.Colour.blue())
 
@@ -134,7 +134,7 @@ class Fun(commands.Cog):
 
     @commands.command()
     async def lmgtfy(self, ctx, *, search):
-        """!lmgtfy <search> - Create lmgtfy link."""
+        """!lmgtfy <search> - Create LMGTFY link."""
         url = 'https://lmgtfy.com/?iie=1&q='
         link = f'{url}{requests.utils.quote(search)}'
         embed = discord.Embed(colour=discord.Colour.blue())
@@ -143,7 +143,7 @@ class Fun(commands.Cog):
 
     @commands.command()
     async def shiba(self, ctx):
-        """!shiba - Get random Shiba image."""
+        """!shiba - Display random Shiba image."""
         url = 'https://dog.ceo/api/breed/shiba/images/random'
         embed = discord.Embed(colour=discord.Colour.blue())
 

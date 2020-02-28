@@ -20,14 +20,10 @@ class Admin(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    def is_owner(self, ctx):
-        """Check the ID against the owner ID in config file."""
-        return ctx.author.id == config['bot']['owner']
-
     @commands.command()
     async def admincheck(self, ctx):
-        """!admincheck - Check if the message author is the bot owner."""
-        is_admin = self.is_owner(ctx)
+        """!admincheck - Check if you are the Codex BOT owner."""
+        is_admin = ctx.author.id == config['bot']['owner']
         embed = discord.Embed(colour=discord.Colour.red())
         if is_admin:
             embed.add_field(
@@ -104,7 +100,7 @@ class Admin(commands.Cog):
     @commands.command()
     @commands.has_permissions(administrator=True)
     async def restart(self, ctx):
-        """!restart - Restart bot."""
+        """!restart - Restart Codex."""
         embed = discord.Embed(colour=discord.Colour.red())
         embed.add_field(
             name='Admin',

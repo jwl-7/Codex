@@ -16,7 +16,7 @@ class Text(commands.Cog):
 
     @commands.command()
     async def ascii(self, ctx, *, message):
-        """!ascii <message> - Convert message to ascii art."""
+        """!ascii <message> - Convert text to ASCII art."""
         ascii_art = str(pyfiglet.figlet_format(message.strip()))
 
         if len(ascii_art) > 2000:
@@ -53,7 +53,7 @@ class Text(commands.Cog):
 
     @commands.command()
     async def sponge(self, ctx, *, message):
-        """!sponge <message> - Convert message to SpongeBob meme text."""
+        """!sponge <message> - Convert text to sPoNgEbOb mOcKiNg tExT."""
         sponge_text = ''
         for i, char in enumerate(message):
             sponge_text += char.upper() if i & 1 else char.lower()
