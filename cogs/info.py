@@ -32,6 +32,9 @@ class Info(commands.Cog):
     @commands.command()
     async def about(self, ctx):
         """!about - Get information on Codex."""
+        github_url = 'https://github.com/jwl-7/Codex'
+        preview_url = 'https://i.imgur.com/GsFqPu8.gif'
+        avatar_url = 'https://i.imgur.com/sR82NlB.jpg'
         features = (
             '**Features**\n'
             '- Ask the Magic 8-ball\n'
@@ -41,22 +44,15 @@ class Info(commands.Cog):
             '- ...and much more!'
             )
 
-        embed = discord.Embed(colour=discord.Colour.purple())
-        embed.set_author(
-            name='Codex BOT - Information',
-            icon_url='https://i.imgur.com/wSg6r3n.jpg'
+        embed = discord.Embed(
+            colour=discord.Colour.purple(),
+            title='Codex BOT - Information'
         )
-        embed.add_field(
-            name=features,
-            value='[🤖 View on GitHub](https://github.com/jwl-7/Codex)'
-        )
-        embed.set_image(url='https://i.imgur.com/GsFqPu8.gif')
-        embed.set_footer(
-            text='Made by JWL#5526',
-            icon_url='https://avatars2.githubusercontent.com/u/37751085?s=460&v=4'
-        )
+        embed.add_field(name=features, value=f'[🤖 View on GitHub]({github_url})')
+        embed.set_thumbnail(url=self.bot.user.avatar_url)
+        embed.set_image(url=preview_url)
+        embed.set_footer(text='Made by JWL', icon_url=avatar_url)
         await ctx.send(embed=embed)
-        print(os.getpid())
 
     @commands.command()
     @commands.has_permissions(administrator=True)
