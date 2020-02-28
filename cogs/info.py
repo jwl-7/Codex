@@ -78,11 +78,11 @@ class Info(commands.Cog):
         mem_usage = process.memory_info().rss
         mem_usage /= 1024 ** 2
 
-        embed = discord.Embed(colour=discord.Colour.green())
-        embed.set_author(
-            name='Codex BOT - Status',
-            icon_url='https://i.imgur.com/wSg6r3n.jpg'
+        embed = discord.Embed(
+            colour=discord.Colour.green(),
+            title='Codex BOT - Stats'
         )
+        embed.set_thumbnail(url=self.bot.user.avatar_url)
         embed.add_field(
             name='🕖 Uptime',
             value=f'{int(hours)} hours, {int(minutes)} minutes, {int(seconds)} seconds',
