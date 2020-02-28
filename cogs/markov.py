@@ -9,9 +9,9 @@ import re
 import string
 
 import discord
-from discord.ext import commands
 
 from db.dbhelper import Database
+from discord.ext import commands
 
 
 class MarkovChain(commands.Cog):

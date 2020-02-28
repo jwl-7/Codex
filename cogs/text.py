@@ -6,6 +6,7 @@ This module includes commands that modify text.
 
 import discord
 import pyfiglet
+
 from discord.ext import commands
 
 
