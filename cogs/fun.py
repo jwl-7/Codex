@@ -20,6 +20,7 @@ class Fun(commands.Cog):
     @commands.command(name='8ball')
     async def _8ball(self, ctx):
         """!8ball - Ask the Magic 8-Ball."""
+        icon_url = 'https://i.imgur.com/XhNqADi.png'
         responses = [
             'It is certain.',
             'It is decidedly so.',
@@ -45,30 +46,32 @@ class Fun(commands.Cog):
         fortune = random.choice(responses)
 
         embed = discord.Embed(colour=discord.Colour.purple())
-        embed.set_author(name='Magic 8-Ball', icon_url='https://i.imgur.com/XhNqADi.png')
+        embed.set_author(name='Magic 8-Ball', icon_url=icon_url)
         embed.add_field(name=f'*{ctx.author.name}, your fortune says...*', value=f'**{fortune}**')
         await ctx.send(embed=embed)
 
     @commands.command()
     async def coin(self, ctx):
         """!coin - Flip a coin."""
+        icon_url = 'https://i.imgur.com/jQX05l8.png'
         faces = ['Heads!', 'Tails!']
         outcome = random.choice(faces)
 
         embed = discord.Embed(colour=discord.Colour.blue())
-        embed.set_author(name='Coin Flip', icon_url='https://i.imgur.com/jQX05l8.png')
+        embed.set_author(name='Coin Flip', icon_url=icon_url)
         embed.add_field(name=f'*{ctx.author.name}, the coin lands...*', value=f'**{outcome}**')
         await ctx.send(embed=embed)
 
     @commands.command()
     async def dice(self, ctx):
         """!dice - Roll two dice."""
+        icon_url = 'https://i.imgur.com/rkfXx3q.png'
         die1 = random.randint(1, 6)
         die2 = random.randint(1, 6)
         total = die1 + die2
 
         embed = discord.Embed(colour=discord.Colour.blue())
-        embed.set_author(name='Dice Roller', icon_url='https://i.imgur.com/rkfXx3q.png')
+        embed.set_author(name='Dice Roller', icon_url=icon_url)
         embed.add_field(
             name=f'*{ctx.author.name} rolls the dice...*',
             value=f'**{die1}** and **{die2}** for a total of **{total}**'
@@ -78,6 +81,8 @@ class Fun(commands.Cog):
     @commands.command()
     async def horoscope(self, ctx, sign):
         """!horoscope <sunsign> - Get daily horoscope."""
+        url = 'http://horoscope-api.herokuapp.com/horoscope/today/'
+        sign = sign.capitalize()
         emojis = {
             'Aries': '♈',
             'Taurus': '♉',
@@ -92,9 +97,8 @@ class Fun(commands.Cog):
             'Aquarius': '♒',
             'Pisces': '♓'
         }
-        sign = sign.capitalize()
 
-        r = requests.get(f'http://horoscope-api.herokuapp.com/horoscope/today/{sign}')
+        r = requests.get(f'{url}{sign}')
         try:
             r.raise_for_status()
         except requests.exceptions.HTTPError as error:
@@ -112,7 +116,8 @@ class Fun(commands.Cog):
     @commands.command()
     async def joke(self, ctx):
         """!joke - Get random dad joke."""
-        r = requests.get('https://icanhazdadjoke.com/', headers={'Accept': 'text/plain'})
+        url = 'https://icanhazdadjoke.com/'
+        r = requests.get(url, headers={'Accept': 'text/plain'})
         try:
             r.raise_for_status()
         except requests.exceptions.HTTPError as error:
@@ -129,7 +134,8 @@ class Fun(commands.Cog):
     @commands.command()
     async def shiba(self, ctx):
         """!shiba - Get random Shiba image."""
-        r = requests.get('https://dog.ceo/api/breed/shiba/images/random')
+        url = 'https://dog.ceo/api/breed/shiba/images/random'
+        r = requests.get(url)
         try:
             r.raise_for_status()
         except requests.exceptions.HTTPError as error:
@@ -143,6 +149,7 @@ class Fun(commands.Cog):
     @commands.command()
     async def slots(self, ctx):
         """!slots - Play fruit emojis slot machine."""
+        icon_url = 'https://i.imgur.com/8oGuoyq.png'
         slots = ['apple', 'watermelon', 'taco', 'cherries', 'doughnut', 'grapes']
         slot1 = slots[random.randint(0, 5)]
         slot2 = slots[random.randint(0, 5)]
@@ -153,7 +160,7 @@ class Fun(commands.Cog):
         jackpot = '$$$ !!! JACKPOT !!! $$$'
 
         embed = discord.Embed(colour=discord.Colour.gold())
-        embed.set_author(name='Slot Machine', icon_url='https://i.imgur.com/8oGuoyq.png')
+        embed.set_author(name='Slot Machine', icon_url=icon_url)
         embed.add_field(
             name=f'*{ctx.author.name} pulls the slot machine handle...*',
             value='\u200b',
