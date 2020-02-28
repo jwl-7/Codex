@@ -9,7 +9,6 @@ import random
 import discord
 import requests
 
-import urllib.parse
 from discord.ext import commands
 
 
@@ -82,6 +81,7 @@ class Fun(commands.Cog):
     async def horoscope(self, ctx, sign):
         """!horoscope <sunsign> - Get daily horoscope."""
         url = 'http://horoscope-api.herokuapp.com/horoscope/today/'
+        icon_url = 'https://i.imgur.com/MWu59YN.png'
         sign = sign.capitalize()
         emojis = {
             'Aries': '♈',
@@ -97,19 +97,20 @@ class Fun(commands.Cog):
             'Aquarius': '♒',
             'Pisces': '♓'
         }
+        embed = discord.Embed(title=f'{emojis[sign]} {sign}', colour=discord.Colour.gold())
+        embed.set_author(name='Horoscope', icon_url=icon_url)
 
-        r = requests.get(f'{url}{sign}')
         try:
+            r = requests.get(f'{url}{sign}')
             r.raise_for_status()
-        except requests.exceptions.HTTPError as error:
-            return print(f'[ERROR] {error}')
+        except requests.exceptions.RequestException:
+            embed.description = 'Failed to connect to the astrology API'
+            return await ctx.send(embed=embed)
 
         astrology = r.json()['horoscope']
-        embed = discord.Embed(title=f'{emojis[sign]} {sign}', colour=discord.Colour.gold())
-        embed.set_author(name='Horoscope', icon_url='https://i.imgur.com/MWu59YN.png')
         embed.add_field(
             name=f'*{ctx.author.name}, your daily horoscope is...*',
-            value=f'**{astrology}**'
+            value=astrology
         )
         await ctx.send(embed=embed)
 
@@ -117,32 +118,41 @@ class Fun(commands.Cog):
     async def joke(self, ctx):
         """!joke - Get random dad joke."""
         url = 'https://icanhazdadjoke.com/'
-        r = requests.get(url, headers={'Accept': 'text/plain'})
-        try:
-            r.raise_for_status()
-        except requests.exceptions.HTTPError as error:
-            return print(f'[ERROR] {error}')
+        embed = discord.Embed(colour=discord.Colour.blue())
 
-        await ctx.send(r.text)
+        try:
+            r = requests.get(url, headers={'Accept': 'text/plain'})
+            r.raise_for_status()
+        except requests.exceptions.RequestException:
+            embed.add_field(name='Joke', value='Failed to connect to the joke API')
+            return await ctx.send(embed=embed)
+
+        embed.add_field(name='Joke', value=r.text)
+        await ctx.send(embed=embed)
 
     @commands.command()
     async def lmgtfy(self, ctx, *, search):
         """!lmgtfy <search> - Create lmgtfy link."""
         url = 'https://lmgtfy.com/?iie=1&q='
-        await ctx.send(f'<{url}{urllib.parse.quote_plus(search)}>')
+        link = f'{url}{requests.utils.quote(search)}'
+        embed = discord.Embed(colour=discord.Colour.blue())
+        embed.add_field(name='LMGTFY', value=link)
+        await ctx.send(embed=embed)
 
     @commands.command()
     async def shiba(self, ctx):
         """!shiba - Get random Shiba image."""
         url = 'https://dog.ceo/api/breed/shiba/images/random'
-        r = requests.get(url)
+        embed = discord.Embed(colour=discord.Colour.blue())
+
         try:
+            r = requests.get(url)
             r.raise_for_status()
-        except requests.exceptions.HTTPError as error:
-            return print(f'[ERROR] {error}')
+        except requests.exceptions.RequestException:
+            embed.add_field(name='Shiba', value='Failed to connect to the dog API')
+            return await ctx.send(embed=embed)
 
         image = r.json()['message']
-        embed = discord.Embed(colour=discord.Colour.blue())
         embed.set_image(url=image)
         await ctx.send(embed=embed)
 
