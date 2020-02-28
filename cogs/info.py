@@ -31,7 +31,7 @@ class Info(commands.Cog):
 
     @commands.command()
     async def about(self, ctx):
-        """!about - Get information on Codex."""
+        """!about - Codex BOT information."""
         github_url = 'https://github.com/jwl-7/Codex'
         preview_url = 'https://i.imgur.com/GsFqPu8.gif'
         avatar_url = 'https://i.imgur.com/sR82NlB.jpg'
@@ -39,8 +39,11 @@ class Info(commands.Cog):
             '**Features**\n'
             '- Ask the Magic 8-ball\n'
             '- Play fruit emoji slots\n'
-            '- Generate tons of corporate/tech jargon\n'
-            '- Markov chain sentence responses\n'
+            '- Convert text to ASCII art\n'
+            '- Display random shiba image\n'
+            '- Generate corporate bulls**t and educational nonsense\n'
+            '- Look up words on Merriam-Webster and Urban Dictionary\n'
+            '- Codex constructs funny Markov chain sentence responses\n'
             '- ...and much more!'
             )
 
@@ -55,84 +58,8 @@ class Info(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command()
-    @commands.has_permissions(administrator=True)
-    async def adminhelp(self, ctx):
-        """!adminhelp - DM bot admin command list."""
-        admin_cmds = (
-            '**!admincheck** - bot owner check\n'
-            '**!adminhelp** - dm bot admin command list\n'
-            '**!load** *<name>* - load extension\n'
-            '**!unload** *<name>* - unload extension\n'
-            '**!reload** *<name>* - reload extension\n'
-            '**!restart** - restart bot'
-            )
-
-        embed = discord.Embed(colour=discord.Colour.red())
-        embed.set_author(
-            name='Codex BOT - Admin Command List',
-            icon_url='https://i.imgur.com/wSg6r3n.jpg'
-        )
-        embed.add_field(name=admin_cmds, value='\u200b')
-        try:
-            await ctx.author.send(embed=embed)
-        except discord.Forbidden:
-            return print(f'[ERROR] Failed to send !adminhelp list to {ctx.author.name}')
-
-    @commands.command()
-    async def help(self, ctx):
-        """!help - DM bot command list."""
-        info_cmds = (
-            '**!about** - codex bot information\n'
-            '**!help** - dm bot command list\n'
-            '**!ping** - test bot latency\n'
-            '**!status** - codex bot stats'
-            )
-        fun_cmds = (
-            '**!8ball** - magic 8-ball\n'
-            '**!coin** - heads or tails\n'
-            '**!dice** - roll two dice\n'
-            '**!horoscope** *<sunsign>* - daily horoscope\n'
-            '**!joke** - random dad joke\n'
-            '**!lmgtfy** *<search>* - create lmgtfy link\n'
-            '**!shiba** - random shiba image\n'
-            '**!slots** - fruit emojis slot machine'
-            )
-        generators_cmds = (
-            '**!audiophile** - generate hipster audio jargon\n'
-            '**!corporate** - generate corporate bullshit\n'
-            '**!education** - generate educational nonsense\n'
-            '**!excuse** - generate the perfect excuse\n'
-            '**!technology** - generate hollywood tech jargon\n'
-            '**!wisdom** - generate deepak chopra quote'
-            )
-        text_cmds = (
-            '**!ascii** *<message>* - convert message to ascii art\n'
-            '**!fliptext** *<message>* - flip message upside down/backwards\n'
-            '**!sponge** *<message>* - convert message to spongemock text'
-            )
-        dictionary_cmds = (
-            '**!define** *<search>* - search merriam-webster dictionary\n'
-            '**!udefine** *<search>* - search urban dictionary'
-            )
-
-        embed = discord.Embed(colour=discord.Colour.purple())
-        embed.set_author(
-            name='Codex BOT - Command List',
-            icon_url='https://i.imgur.com/wSg6r3n.jpg'
-        )
-        embed.add_field(name='Info', value=info_cmds, inline=False)
-        embed.add_field(name='Fun', value=fun_cmds, inline=False)
-        embed.add_field(name='Generators', value=generators_cmds, inline=False)
-        embed.add_field(name='Text', value=text_cmds, inline=False)
-        embed.add_field(name='Dictionary', value=dictionary_cmds, inline=False)
-        try:
-            await ctx.author.send(embed=embed)
-        except discord.Forbidden:
-            return print(f'[ERROR] Failed to send !help list to {ctx.author.name}')
-
-    @commands.command()
     async def ping(self, ctx):
-        """!ping - Test bot latency."""
+        """!ping - Test BOT latency."""
         latency = self.bot.latency
         milliseconds = int(round(latency * 1000))
 
@@ -142,7 +69,7 @@ class Info(commands.Cog):
 
     @commands.command()
     async def status(self, ctx):
-        """!status - Get stats on Codex."""
+        """!status - Codex BOT stats."""
         uptime = time.time() - self.bot.uptime
         minutes, seconds = divmod(uptime, 60)
         hours, minutes = divmod(minutes, 60)
@@ -169,5 +96,4 @@ class Info(commands.Cog):
 
 
 def setup(bot):
-    bot.remove_command('help')
     bot.add_cog(Info(bot))
