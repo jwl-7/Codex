@@ -28,7 +28,6 @@ class Admin(commands.Cog):
     async def admincheck(self, ctx):
         """!admincheck - Check if the message author is the bot owner."""
         is_admin = self.is_owner(ctx)
-
         embed = discord.Embed(colour=discord.Colour.red())
         if is_admin:
             embed.add_field(
