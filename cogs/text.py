@@ -47,7 +47,7 @@ class Text(commands.Cog):
             flip_text += flipped[char] if char in flipped else char
 
         embed = discord.Embed(colour=discord.Colour.blue())
-        embed.add_field(name=f'*{ctx.author.name} says...*', value=f'**{flip_text[::-1]}**')
+        embed.add_field(name=f'*{ctx.author.name} says...*', value=flip_text[::-1])
         await ctx.message.delete()
         await ctx.send(embed=embed)
 
@@ -59,7 +59,7 @@ class Text(commands.Cog):
             sponge_text += char.upper() if i & 1 else char.lower()
 
         embed = discord.Embed(colour=discord.Colour.blue())
-        embed.add_field(name=f'*{ctx.author.name} mocks...*', value=f'**{sponge_text}**')
+        embed.add_field(name=f'*{ctx.author.name} mocks...*', value=sponge_text)
         await ctx.message.delete()
         await ctx.send(embed=embed)
 
