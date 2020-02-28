@@ -3,45 +3,45 @@ a python discord bot with Markov chain responses, slots, and more
 
 ## Commands
 * Info
-    - **!about** - codex bot information
-    - **!help** - dm bot command list
-    - **!ping** - test bot latency
-    - **!status** - codex bot stats
+    - **!about** - Codex BOT information.
+    - **!help** - DM command list.
+    - **!ping** - Test BOT latency.
+    - **!status** - Codex BOT stats.
 
 * Fun
-    - **!8ball** - magic 8-ball
-    - **!coin** - heads or tails
-    - **!dice** - roll two dice
-    - **!horoscope** *\<sunsign>* - daily horoscope
-    - **!joke** - random dad joke
-    - **!lmgtfy** *\<search>* - create lmgtfy link
-    - **!shiba** - random shiba image
-    - **!slots** - fruit emojis slot machine
+    - **!8ball** - Ask the Magic 8-Ball.
+    - **!coin** - Flip a coin.
+    - **!dice** - Roll two dice.
+    - **!horoscope** *\<sunsign>* - Find out daily horoscope.
+    - **!joke** - Receive random dad joke.
+    - **!lmgtfy** *\<search>* - Create LMGTFY link.
+    - **!shiba** - Display random Shiba image.
+    - **!slots** - Play fruit emojis slot machine.
 
 * Generators
-    - **!audiophile** - generate hipster audio jargon
-    - **!corporate** - generate corporate bulls**t
-    - **!education** - generate educational nonsense
-    - **!excuse** - generate the perfect excuse
-    - **!technology** - generate hollywood tech jargon
-    - **!wisdom** - generate deepak chopra quote
+    - **!audiophile** - Generate hipster audio jargon.
+    - **!corporate** - Generate corporate bulls**t.
+    - **!education** - Generate educational nonsense.
+    - **!excuse** - Generate the perfect excuse.
+    - **!technology** - Generate hollywood tech jargon.
+    - **!wisdom** - Generate deepak chopra quote.
 
 * Text
-    - **!ascii** *\<message>* - convert message to ascii art
-    - **!fliptext** *\<message>* - flip message upside down/backwards
-    - **!sponge** *\<message>* - convert message to spongemock text
+    - **!ascii** *\<message>* - Convert text to ASCII art.
+    - **!fliptext** *\<message>* - Flip text upside down/backwards.
+    - **!sponge** *\<message>* - Convert text to sPoNgEbOb mOcKiNg tExT.
 
 * Dictionary
-    - **!define** *\<search>* - search merriam-webster dictionary
-    - **!udefine** *\<search>* - search urban dictionary
+    - **!define** *\<search>* - Search Merriam-Webster dictionary.
+    - **!udefine** *\<search>* - Search Urban Dictionary.
 
 ## Admin Commands
-- **!admincheck** - bot owner check
-- **!adminhelp** - dm bot admin command list
-- **!load** *\<name>* - load extension
-- **!unload** *\<name>* - unload extension
-- **!reload** *\<name>* - reload extension
-- **!restart** - restart bot
+- **!admincheck** - Check if you are the Codex BOT owner.
+- **!adminhelp** - DM admin command list.
+- **!load** *\<name>* - Load extension.
+- **!unload** *\<name>* - Unload extension.
+- **!reload** *\<name>* - Reload extension.
+- **!restart** - Restart Codex.
 
 ## Markov Sentence Generator
 - triggered when a message includes the bot name or @mentions it
