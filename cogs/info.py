@@ -1,6 +1,6 @@
 """Info
 
-This module contains help commands.
+This module contains information commands.
 """
 
 
