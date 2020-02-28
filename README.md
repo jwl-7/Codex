@@ -44,9 +44,9 @@ a python discord bot with Markov chain responses, slots, and more
 - **!restart** - Restart Codex.
 
 ## Markov Sentence Generator
-- triggered when a message includes the bot name or @mentions it
-- words grabbed from chatlog stored in sqlite database
-- sentences become more amusing overtime as bot "learns" more words
+- Triggered when a message includes the BOT name or @mentions Codex.
+- Words grabbed from chatlog stored in sqlite database.
+- Sentences become more amusing overtime as Codex "learns" more words.
 
 ## Preview
 [![codex-chatbot.png](https://i.imgur.com/GsFqPu8.gif)](https://imgur.com/a/VX450os)
