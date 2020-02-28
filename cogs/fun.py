@@ -121,13 +121,15 @@ class Fun(commands.Cog):
         embed = discord.Embed(colour=discord.Colour.blue())
 
         try:
-            r = requests.get(url, headers={'Accept': 'text/plain'})
+            r = requests.get(url, headers={'Accept': 'application/json'})
             r.raise_for_status()
         except requests.exceptions.RequestException:
             embed.add_field(name='Joke', value='Failed to connect to the joke API')
             return await ctx.send(embed=embed)
 
-        embed.add_field(name='Joke', value=r.text)
+        data = r.json()
+        joke = data['joke']
+        embed.add_field(name='Joke', value=joke)
         await ctx.send(embed=embed)
 
     @commands.command()
