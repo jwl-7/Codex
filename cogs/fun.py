@@ -45,27 +45,6 @@ class Fun(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command()
-    async def joke(self, ctx):
-        """!joke - Receive random dad joke."""
-        url = 'https://icanhazdadjoke.com/'
-        embed = discord.Embed(colour=discord.Colour.blue())
-
-        try:
-            r = requests.get(url, headers={'Accept': 'application/json'})
-            r.raise_for_status()
-        except requests.exceptions.RequestException:
-            embed = discord.Embed(
-                colour=discord.Colour.darker_grey(),
-                description='Failed to connect to the *Joke API*'
-            )
-            return await ctx.send(embed=embed)
-
-        data = r.json()
-        joke = data['joke']
-        embed.add_field(name='Joke', value=joke)
-        await ctx.send(embed=embed)
-
-    @commands.command()
     async def lmgtfy(self, ctx, *, search):
         """!lmgtfy <search> - Create LMGTFY link."""
         url = 'https://lmgtfy.com/?iie=1&q='
