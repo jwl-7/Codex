@@ -16,39 +16,6 @@ class Fun(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(name='8ball')
-    async def _8ball(self, ctx):
-        """!8ball - Ask the Magic 8-Ball."""
-        icon_url = 'https://i.imgur.com/XhNqADi.png'
-        responses = [
-            'It is certain.',
-            'It is decidedly so.',
-            'Without a doubt.',
-            'Yes - definitely.',
-            'You may rely on it.',
-            'As I see it, yes.',
-            'Most likely.',
-            'Outlook good.',
-            'Yes.',
-            'Signs point to yes.',
-            'Reply hazy, try again.',
-            'Ask again later.',
-            'Better not tell you now.',
-            'Cannot predict now.',
-            'Concentrate and ask again.',
-            'Do not count on it.',
-            'My reply is no.',
-            'My sources say no.',
-            'Outlook not so good.',
-            'Very doubtful.'
-            ]
-        fortune = random.choice(responses)
-
-        embed = discord.Embed(colour=discord.Colour.purple())
-        embed.set_author(name='Magic 8-Ball', icon_url=icon_url)
-        embed.add_field(name=f'*{ctx.author.name}, your fortune says...*', value=f'**{fortune}**')
-        await ctx.send(embed=embed)
-
     @commands.command()
     async def coin(self, ctx):
         """!coin - Flip a coin."""
@@ -125,38 +92,6 @@ class Fun(commands.Cog):
 
         image = r.json()['message']
         embed.set_image(url=image)
-        await ctx.send(embed=embed)
-
-    @commands.command()
-    async def slots(self, ctx):
-        """!slots - Play fruit emojis slot machine."""
-        icon_url = 'https://i.imgur.com/8oGuoyq.png'
-        slots = ['apple', 'watermelon', 'taco', 'cherries', 'doughnut', 'grapes']
-        slot1 = slots[random.randint(0, 5)]
-        slot2 = slots[random.randint(0, 5)]
-        slot3 = slots[random.randint(0, 5)]
-        slot4 = slots[random.randint(0, 5)]
-
-        slot_spin = f'|\t:{slot1}:\t|\t:{slot2}:\t|\t:{slot3}:\t|\t:{slot4}:\t|'
-        jackpot = '$$$ !!! JACKPOT !!! $$$'
-
-        embed = discord.Embed(colour=discord.Colour.gold())
-        embed.set_author(name='Slot Machine', icon_url=icon_url)
-        embed.add_field(
-            name=f'*{ctx.author.name} pulls the slot machine handle...*',
-            value='\u200b',
-            inline=False
-        )
-
-        if (
-            slot1 == slot2 and slot3 == slot4 or
-            slot1 == slot3 and slot2 == slot4 or
-            slot1 == slot4 and slot2 == slot3
-        ):
-            embed.add_field(name=slot_spin, value='\u200b')
-            embed.set_footer(text=jackpot)
-        else:
-            embed.add_field(name=slot_spin, value='\u200b')
         await ctx.send(embed=embed)
 
 
