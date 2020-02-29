@@ -13,12 +13,15 @@ a python discord bot with Markov chain responses, slots, and more
     - **!coin** - Flip a coin.
     - **!dice** - Roll two dice.
     - **!horoscope** *\<sunsign>* - Find out daily horoscope.
-    - **!joke** - Receive random dad joke.
     - **!lmgtfy** *\<search>* - Create LMGTFY link.
-    - **!shiba** - Display random Shiba image.
     - **!slots** - Play fruit emojis slot machine.
 
-* Generators
+* Jokes
+    - **!csjoke** - Receive random programming joke.
+    - **!chucknorris** - Receive random chuck norris joke.
+    - **!joke** - Receive random dad joke.
+
+* Jargon
     - **!audiophile** - Generate hipster audio jargon.
     - **!corporate** - Generate corporate bulls**t.
     - **!education** - Generate educational nonsense.
@@ -30,6 +33,12 @@ a python discord bot with Markov chain responses, slots, and more
     - **!ascii** *\<message>* - Convert text to ASCII art.
     - **!fliptext** *\<message>* - Flip text upside down/backwards.
     - **!sponge** *\<message>* - Convert text to sPoNgEbOb mOcKiNg tExT.
+
+* Dogs
+    - **!dog** - Display random dog image.
+    - **!labrador** - Display random Labrador image.
+    - **!pyrenees** - Display random Pyrenees image.
+    - **!shiba** - Display random Shiba image.
 
 * Dictionary
     - **!define** *\<search>* - Search Merriam-Webster dictionary.

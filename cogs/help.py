@@ -47,12 +47,15 @@ class Help(commands.Cog):
             '**!coin** - Flip a coin.\n'
             '**!dice** - Roll two dice.\n'
             '**!horoscope** *<sunsign>* - Find out daily horoscope.\n'
-            '**!joke** - Receive random dad joke.\n'
             '**!lmgtfy** *<search>* - Create LMGTFY link.\n'
-            '**!shiba** - Display random Shiba image.\n'
             '**!slots** - Play fruit emojis slot machine.'
             )
-        generators_cmds = (
+        joke_cmds = (
+            '**!csjoke** - Receive random programming joke.\n'
+            '**!chucknorris** - Receive Chuck Norris joke.\n'
+            '**!joke** - Receive random dad joke.'
+            )
+        jargon_cmds = (
             '**!audiophile** - Generate hipster audio jargon.\n'
             '**!corporate** - Generate corporate bullshit.\n'
             '**!education** - Generate educational nonsense.\n'
@@ -65,6 +68,12 @@ class Help(commands.Cog):
             '**!fliptext** *<message>* - Flip text upside down/backwards.\n'
             '**!sponge** *<message>* - Convert text to sPoNgEbOb mOcKiNg tExT.'
             )
+        dog_cmds = (
+            '**!dog** - Display random dog image.\n'
+            '**!labrador** - Display random Labrador image.\n'
+            '**!pyrenees** - Display random Pyrenees image.\n'
+            '**!shiba** - Display random Shiba image.\n'
+            )
         dictionary_cmds = (
             '**!define** *<search>* - Search Merriam-Webster dictionary.\n'
             '**!udefine** *<search>* - Search Urban Dictionary.'
@@ -76,8 +85,10 @@ class Help(commands.Cog):
         )
         embed.add_field(name='Info', value=info_cmds, inline=False)
         embed.add_field(name='Fun', value=fun_cmds, inline=False)
-        embed.add_field(name='Generators', value=generators_cmds, inline=False)
+        embed.add_field(name='Jokes', value=joke_cmds, inline=False)
+        embed.add_field(name='Jargon', value=jargon_cmds, inline=False)
         embed.add_field(name='Text', value=text_cmds, inline=False)
+        embed.add_field(name='Dogs', value=dog_cmds, inline=False)
         embed.add_field(name='Dictionary', value=dictionary_cmds, inline=False)
         await ctx.author.send(embed=embed)
 
