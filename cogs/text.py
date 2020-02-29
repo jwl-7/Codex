@@ -20,10 +20,19 @@ class Text(commands.Cog):
         ascii_art = str(pyfiglet.figlet_format(message.strip()))
 
         if len(ascii_art) > 2000:
-            return await ctx.send('Your message was too long for **!ascii**')
+            embed = discord.Embed(
+                colour=discord.Colour.darker_grey(),
+                description='Your message was too long for **!ascii**'
+            )
+            return await ctx.send(embed=embed)
 
-        embed = discord.Embed(colour=discord.Colour.blue())
-        embed.add_field(name=f'*{ctx.author.name} says...*', value=f'```{ascii_art}```')
+        embed = discord.Embed(
+            colour=discord.Colour.blue(),
+            description=(
+                f'**{ctx.author.name}:**\n'
+                f'```{ascii_art}```'
+            )
+        )
         await ctx.message.delete()
         await ctx.send(embed=embed)
 
@@ -46,8 +55,10 @@ class Text(commands.Cog):
         for char in message:
             flip_text += flipped[char] if char in flipped else char
 
-        embed = discord.Embed(colour=discord.Colour.blue())
-        embed.add_field(name=f'*{ctx.author.name} says...*', value=flip_text[::-1])
+        embed = discord.Embed(
+            colour=discord.Colour.blue(),
+            description=f'**{ctx.author.name}:** {flip_text[::-1]}'
+        )
         await ctx.message.delete()
         await ctx.send(embed=embed)
 
@@ -58,8 +69,10 @@ class Text(commands.Cog):
         for i, char in enumerate(message):
             sponge_text += char.upper() if i & 1 else char.lower()
 
-        embed = discord.Embed(colour=discord.Colour.blue())
-        embed.add_field(name=f'*{ctx.author.name} mocks...*', value=sponge_text)
+        embed = discord.Embed(
+            colour=discord.Colour.blue(),
+            description=f'**{ctx.author.name}:** {sponge_text}'
+        )
         await ctx.message.delete()
         await ctx.send(embed=embed)
 
