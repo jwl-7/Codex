@@ -78,54 +78,6 @@ class Fun(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command()
-    async def horoscope(self, ctx, sign):
-        """!horoscope <sunsign> - Find out daily horoscope."""
-        url = 'http://horoscope-api.herokuapp.com/horoscope/today/'
-        icon_url = 'https://i.imgur.com/MWu59YN.png'
-        sign = sign.capitalize()
-        emojis = {
-            'Aries': '♈',
-            'Taurus': '♉',
-            'Gemini': '♊',
-            'Cancer': '♋',
-            'Leo': '♌',
-            'Virgo': '♍',
-            'Libra': '♎',
-            'Scorpio': '♏',
-            'Sagitarrius': '♐',
-            'Capricorn': '♑',
-            'Aquarius': '♒',
-            'Pisces': '♓'
-        }
-
-        if sign not in emojis:
-            embed = discord.Embed(
-                colour=discord.Colour.darker_grey(),
-                description='Invalid astrological sign for **!horoscope**'
-            )
-            return await ctx.send(embed=embed)
-
-        embed = discord.Embed(title=f'{emojis[sign]} {sign}', colour=discord.Colour.blue())
-        embed.set_author(name='Horoscope', icon_url=icon_url)
-
-        try:
-            r = requests.get(f'{url}{sign}')
-            r.raise_for_status()
-        except requests.exceptions.RequestException:
-            embed = discord.Embed(
-                colour=discord.Colour.darker_grey(),
-                description='Failed to connect to the *Horoscope API*'
-            )
-            return await ctx.send(embed=embed)
-
-        astrology = r.json()['horoscope']
-        embed.add_field(
-            name=f'*{ctx.author.name}, your daily horoscope is...*',
-            value=astrology
-        )
-        await ctx.send(embed=embed)
-
-    @commands.command()
     async def joke(self, ctx):
         """!joke - Receive random dad joke."""
         url = 'https://icanhazdadjoke.com/'
