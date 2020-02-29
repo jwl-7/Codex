@@ -1,6 +1,6 @@
 """Fun
 
-This module includes fun/simple commands.
+This module includes simple fun commands.
 """
 
 
