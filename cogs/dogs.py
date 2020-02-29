@@ -17,7 +17,7 @@ class Dogs(commands.Cog):
     @commands.command()
     async def dog(self, ctx):
         """!dog - Display random dog image."""
-        url = 'https://dog.ceo/api/breeds/images/random'
+        url = 'https://dog.ceo/api/breeds/image/random'
         embed = discord.Embed(colour=discord.Colour.blue())
 
         try:
