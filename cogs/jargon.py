@@ -17,7 +17,7 @@ import jargon.technology as tech
 from discord.ext import commands
 
 
-class Generators(commands.Cog):
+class Jargon(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -119,4 +119,4 @@ class Generators(commands.Cog):
 
 
 def setup(bot):
-    bot.add_cog(Generators(bot))
+    bot.add_cog(Jargon(bot))
