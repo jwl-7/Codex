@@ -97,14 +97,25 @@ class Fun(commands.Cog):
             'Aquarius': '♒',
             'Pisces': '♓'
         }
-        embed = discord.Embed(title=f'{emojis[sign]} {sign}', colour=discord.Colour.gold())
+
+        if sign not in emojis:
+            embed = discord.Embed(
+                colour=discord.Colour.darker_grey(),
+                description='Invalid astrological sign for **!horoscope**'
+            )
+            return await ctx.send(embed=embed)
+
+        embed = discord.Embed(title=f'{emojis[sign]} {sign}', colour=discord.Colour.blue())
         embed.set_author(name='Horoscope', icon_url=icon_url)
 
         try:
             r = requests.get(f'{url}{sign}')
             r.raise_for_status()
         except requests.exceptions.RequestException:
-            embed.description = 'Failed to connect to the astrology API'
+            embed = discord.Embed(
+                colour=discord.Colour.darker_grey(),
+                description='Failed to connect to the *Horoscope API*'
+            )
             return await ctx.send(embed=embed)
 
         astrology = r.json()['horoscope']
@@ -124,7 +135,10 @@ class Fun(commands.Cog):
             r = requests.get(url, headers={'Accept': 'application/json'})
             r.raise_for_status()
         except requests.exceptions.RequestException:
-            embed.add_field(name='Joke', value='Failed to connect to the joke API')
+            embed = discord.Embed(
+                colour=discord.Colour.darker_grey(),
+                description='Failed to connect to the *Joke API*'
+            )
             return await ctx.send(embed=embed)
 
         data = r.json()
@@ -151,7 +165,10 @@ class Fun(commands.Cog):
             r = requests.get(url)
             r.raise_for_status()
         except requests.exceptions.RequestException:
-            embed.add_field(name='Shiba', value='Failed to connect to the dog API')
+            embed = discord.Embed(
+                colour=discord.Colour.darker_grey(),
+                description='Failed to connect to the *Dog API*'
+            )
             return await ctx.send(embed=embed)
 
         image = r.json()['message']

@@ -34,7 +34,10 @@ class Dictionary(commands.Cog):
             r = requests.get(f'{url}{search}?key={token}')
             r.raise_for_status()
         except requests.exceptions.RequestException:
-            embed.description = 'Failed to connect to the dictionary API'
+            embed = discord.Embed(
+                colour=discord.Colour.darker_grey(),
+                description='Failed to connect to the *Dictionary API*'
+            )
             return await ctx.send(embed=embed)
 
         data = r.json()
@@ -63,7 +66,10 @@ class Dictionary(commands.Cog):
             r = requests.get(f'{url}{search}')
             r.raise_for_status()
         except requests.exceptions.RequestException:
-            embed.description = 'Failed to connect to the dictionary API'
+            embed = discord.Embed(
+                colour=discord.Colour.darker_grey(),
+                description='Failed to connect to the *Dictionary API*'
+            )
             return await ctx.send(embed=embed)
 
         data = r.json()
