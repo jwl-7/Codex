@@ -1,6 +1,6 @@
 """Horoscope
 
-This module includes the command to get daily horoscope.
+This module includes the daily horoscope command.
 """
 
 
