@@ -41,9 +41,9 @@ class Info(commands.Cog):
             '- Play fruit emoji slots\n'
             '- Convert text to ASCII art\n'
             '- Display random shiba image\n'
-            '- Generate corporate bulls**t and educational nonsense\n'
-            '- Look up words on Merriam-Webster and Urban Dictionary\n'
-            '- Codex constructs funny Markov chain sentence responses\n'
+            '- Generate corporate bulls**t\n'
+            '- Look up words on Merriam-Webster\n'
+            '- Funny Markov chain sentence responses\n'
             '- ...and much more!'
             )
 
@@ -64,7 +64,7 @@ class Info(commands.Cog):
         milliseconds = int(round(latency * 1000))
 
         embed = discord.Embed(colour=discord.Colour.green())
-        embed.add_field(name='Pong!', value=f'*Latency:* **{milliseconds}ms**')
+        embed.add_field(name='Pong!', value=f'Latency: *{milliseconds}ms*')
         await ctx.send(embed=embed)
 
     @commands.command()
