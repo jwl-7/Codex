@@ -30,7 +30,7 @@ class MarkovChain(commands.Cog):
             response = self.create_chain()
 
             embed = discord.Embed(colour=discord.Colour.blue())
-            embed.add_field(name=f'*{self.bot.user.name} 9000*', value=f'**{response}**')
+            embed.add_field(name=f'{self.bot.user.name} 9000', value=response)
             await message.channel.send(embed=embed)
 
     def format_sentence(self, unformatted_sentence):
