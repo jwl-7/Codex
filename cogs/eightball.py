@@ -41,7 +41,6 @@ class EightBall(commands.Cog):
             'Very doubtful.'
             ]
         fortune = random.choice(responses)
-
         embed = disnake.Embed(colour=disnake.Colour.purple())
         embed.set_author(name='Magic 8-Ball', icon_url=icon_url)
         embed.add_field(name=f'*{ctx.author.name}, your fortune says...*', value=f'**{fortune}**')
