@@ -4,9 +4,8 @@ This module includes jargon generators.
 """
 
 
+import disnake
 import random
-
-import discord
 
 import jargon.audio as audio
 import jargon.chopra as chopra
@@ -14,7 +13,8 @@ import jargon.corporate as corp
 import jargon.education as edu
 import jargon.excuses as excuses
 import jargon.technology as tech
-from discord.ext import commands
+
+from disnake.ext import commands
 
 
 class Jargon(commands.Cog):
@@ -36,7 +36,7 @@ class Jargon(commands.Cog):
             s = f'{{{x}}}'
             sentence = sentence.replace(s, words[x])
 
-        embed = discord.Embed(colour=discord.Colour.blue())
+        embed = disnake.Embed(colour=disnake.Colour.blue())
         embed.add_field(name='Audio Jargon', value=sentence)
         await ctx.send(embed=embed)
 
@@ -49,7 +49,7 @@ class Jargon(commands.Cog):
         noun = random.choice(corp.nouns)
         statement = f'{adverb} {verb} {adjective} {noun}'
 
-        embed = discord.Embed(colour=discord.Colour.blue())
+        embed = disnake.Embed(colour=disnake.Colour.blue())
         embed.add_field(name='Corporate Bullshit', value=statement)
         await ctx.send(embed=embed)
 
@@ -62,7 +62,7 @@ class Jargon(commands.Cog):
         phrase = random.choice(edu.phrases)
         statement = f'We will {verb} {adjective} {noun} {phrase}.'
 
-        embed = discord.Embed(colour=discord.Colour.blue())
+        embed = disnake.Embed(colour=disnake.Colour.blue())
         embed.add_field(name='Educational Nonsense', value=statement)
         await ctx.send(embed=embed)
 
@@ -81,7 +81,7 @@ class Jargon(commands.Cog):
             s = f'{{{x}}}'
             sentence = sentence.replace(s, words[x])
 
-        embed = discord.Embed(colour=discord.Colour.blue())
+        embed = disnake.Embed(colour=disnake.Colour.blue())
         embed.add_field(name='Perfect Excuse', value=sentence)
         await ctx.send(embed=embed)
 
@@ -100,7 +100,7 @@ class Jargon(commands.Cog):
             s = f'{{{x}}}'
             sentence = sentence.replace(s, words[x])
 
-        embed = discord.Embed(colour=discord.Colour.blue())
+        embed = disnake.Embed(colour=disnake.Colour.blue())
         embed.add_field(name='Tech Jargon', value=sentence)
         await ctx.send(embed=embed)
 
@@ -113,7 +113,7 @@ class Jargon(commands.Cog):
         part3 = random.choice(chopra.words3)
         quote = f'{part0} {part1} {part2} {part3}.'
 
-        embed = discord.Embed(colour=discord.Colour.blue())
+        embed = disnake.Embed(colour=disnake.Colour.blue())
         embed.add_field(name='Chopra Wisdom', value=quote)
         await ctx.send(embed=embed)
 

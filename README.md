@@ -60,12 +60,5 @@ a python discord bot with Markov chain responses, slots, and more
 ## Preview
 [![codex-chatbot.png](https://i.imgur.com/GsFqPu8.gif)](https://imgur.com/a/VX450os)
 
-## Requirements
-* Python 3.8+
-* [discord.py](https://pypi.org/project/discord.py/)
-* [psutil](https://pypi.org/project/psutil/)
-* [PyYAML](https://pypi.org/project/PyYAML/)
-* [requests](https://pypi.org/project/requests/)
-
 ## License
 This project is released under the GNU GPL License - see the [LICENSE](LICENSE) file for details

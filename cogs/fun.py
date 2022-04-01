@@ -4,12 +4,11 @@ This module includes simple fun commands.
 """
 
 
+import disnake
 import random
-
-import discord
 import requests
 
-from discord.ext import commands
+from disnake.ext import commands
 
 
 class Fun(commands.Cog):
@@ -23,7 +22,7 @@ class Fun(commands.Cog):
         faces = ['Heads!', 'Tails!']
         outcome = random.choice(faces)
 
-        embed = discord.Embed(colour=discord.Colour.blue())
+        embed = disnake.Embed(colour=disnake.Colour.blue())
         embed.set_author(name='Coin Flip', icon_url=icon_url)
         embed.add_field(name=f'*{ctx.author.name}, the coin lands...*', value=f'**{outcome}**')
         await ctx.send(embed=embed)
@@ -36,7 +35,7 @@ class Fun(commands.Cog):
         die2 = random.randint(1, 6)
         total = die1 + die2
 
-        embed = discord.Embed(colour=discord.Colour.blue())
+        embed = disnake.Embed(colour=disnake.Colour.blue())
         embed.set_author(name='Dice Roller', icon_url=icon_url)
         embed.add_field(
             name=f'*{ctx.author.name} rolls the dice...*',
@@ -49,7 +48,7 @@ class Fun(commands.Cog):
         """!lmgtfy <search> - Create LMGTFY link."""
         url = 'https://lmgtfy.com/?iie=1&q='
         link = f'{url}{requests.utils.quote(search)}'
-        embed = discord.Embed(colour=discord.Colour.blue())
+        embed = disnake.Embed(colour=disnake.Colour.blue())
         embed.add_field(name='LMGTFY', value=link)
         await ctx.send(embed=embed)
 

@@ -7,10 +7,8 @@ This module records the chat messages in the SQLite database.
 import re
 import string
 
-import discord
-
 from db.dbhelper import Database
-from discord.ext import commands
+from disnake.ext import commands
 
 
 class ChatLog(commands.Cog):

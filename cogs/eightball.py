@@ -4,11 +4,10 @@ This module includes the Magic 8-ball command.
 """
 
 
+import disnake
 import random
 
-import discord
-
-from discord.ext import commands
+from disnake.ext import commands
 
 
 class EightBall(commands.Cog):
@@ -43,7 +42,7 @@ class EightBall(commands.Cog):
             ]
         fortune = random.choice(responses)
 
-        embed = discord.Embed(colour=discord.Colour.purple())
+        embed = disnake.Embed(colour=disnake.Colour.purple())
         embed.set_author(name='Magic 8-Ball', icon_url=icon_url)
         embed.add_field(name=f'*{ctx.author.name}, your fortune says...*', value=f'**{fortune}**')
         await ctx.send(embed=embed)

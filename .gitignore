@@ -129,5 +129,5 @@ dmypy.json
 .pyre/
 
 # Codex
-config.yml
+config.py
 chatlog.sqlite

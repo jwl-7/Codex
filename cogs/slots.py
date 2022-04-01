@@ -4,11 +4,10 @@ This module includes the fruit emoji slots command.
 """
 
 
+import disnake
 import random
 
-import discord
-
-from discord.ext import commands
+from disnake.ext import commands
 
 
 class Slots(commands.Cog):
@@ -28,7 +27,7 @@ class Slots(commands.Cog):
         slot_spin = f'|\t:{slot1}:\t|\t:{slot2}:\t|\t:{slot3}:\t|\t:{slot4}:\t|'
         jackpot = '$$$ !!! JACKPOT !!! $$$'
 
-        embed = discord.Embed(colour=discord.Colour.gold())
+        embed = disnake.Embed(colour=disnake.Colour.gold())
         embed.set_author(name='Slot Machine', icon_url=icon_url)
         embed.add_field(
             name=f'*{ctx.author.name} pulls the slot machine handle...*',

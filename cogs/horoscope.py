@@ -4,10 +4,10 @@ This module includes the daily horoscope command.
 """
 
 
-import discord
+import disnake
 import requests
 
-from discord.ext import commands
+from disnake.ext import commands
 
 
 class Horoscope(commands.Cog):
@@ -36,21 +36,21 @@ class Horoscope(commands.Cog):
         }
 
         if sign not in emojis:
-            embed = discord.Embed(
-                colour=discord.Colour.darker_grey(),
+            embed = disnake.Embed(
+                colour=disnake.Colour.darker_grey(),
                 description='Invalid astrological sign for **!horoscope**'
             )
             return await ctx.send(embed=embed)
 
-        embed = discord.Embed(title=f'{emojis[sign]} {sign}', colour=discord.Colour.blue())
+        embed = disnake.Embed(title=f'{emojis[sign]} {sign}', colour=disnake.Colour.blue())
         embed.set_author(name='Horoscope', icon_url=icon_url)
 
         try:
             r = requests.get(f'{url}{sign}')
             r.raise_for_status()
         except requests.exceptions.RequestException:
-            embed = discord.Embed(
-                colour=discord.Colour.darker_grey(),
+            embed = disnake.Embed(
+                colour=disnake.Colour.darker_grey(),
                 description='Failed to connect to the *Horoscope API*'
             )
             return await ctx.send(embed=embed)

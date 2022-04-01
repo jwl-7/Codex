@@ -4,15 +4,11 @@ This module includes dictionary commands.
 """
 
 
-import discord
+import config
+import disnake
 import requests
-import yaml
 
-from discord.ext import commands
-
-
-with open('config.yml') as file:
-    config = yaml.safe_load(file)
+from disnake.ext import commands
 
 
 class Dictionary(commands.Cog):
@@ -25,17 +21,17 @@ class Dictionary(commands.Cog):
         url = 'https://dictionaryapi.com/api/v3/references/collegiate/json/'
         web_url = 'https://www.merriam-webster.com/dictionary/'
         icon_url = 'https://i.imgur.com/rPvCVSQ.png'
-        token = config['dictionary']['token']
+        token = config.dictionary['token']
         link = f'{web_url}{requests.utils.quote(search)}'
-        embed = discord.Embed(colour=discord.Colour.blue())
+        embed = disnake.Embed(colour=disnake.Colour.blue())
         embed.set_author(name='Merriam-Webster Dictionary', icon_url=icon_url)
 
         try:
             r = requests.get(f'{url}{search}?key={token}')
             r.raise_for_status()
         except requests.exceptions.RequestException:
-            embed = discord.Embed(
-                colour=discord.Colour.darker_grey(),
+            embed = disnake.Embed(
+                colour=disnake.Colour.darker_grey(),
                 description='Failed to connect to the *Dictionary API*'
             )
             return await ctx.send(embed=embed)
@@ -59,15 +55,15 @@ class Dictionary(commands.Cog):
         """!udefine <search> - Search Urban Dictionary."""
         url = 'http://api.urbandictionary.com/v0/define?term='
         icon_url = 'https://i.imgur.com/Ojxf6W5.png'
-        embed = discord.Embed(colour=discord.Colour.blue())
+        embed = disnake.Embed(colour=disnake.Colour.blue())
         embed.set_author(name='Urban Dictionary', icon_url=icon_url)
 
         try:
             r = requests.get(f'{url}{search}')
             r.raise_for_status()
         except requests.exceptions.RequestException:
-            embed = discord.Embed(
-                colour=discord.Colour.darker_grey(),
+            embed = disnake.Embed(
+                colour=disnake.Colour.darker_grey(),
                 description='Failed to connect to the *Dictionary API*'
             )
             return await ctx.send(embed=embed)

@@ -4,14 +4,11 @@ This module uses words from the database to construct fun sentences.
 """
 
 
+import disnake
 import random
-import re
-import string
-
-import discord
 
 from db.dbhelper import Database
-from discord.ext import commands
+from disnake.ext import commands
 
 
 class MarkovChain(commands.Cog):
@@ -29,7 +26,7 @@ class MarkovChain(commands.Cog):
         ):
             response = self.create_chain()
 
-            embed = discord.Embed(colour=discord.Colour.blue())
+            embed = disnake.Embed(colour=disnake.Colour.blue())
             embed.add_field(name=f'{self.bot.user.name} 9000', value=response)
             await message.channel.send(embed=embed)
 

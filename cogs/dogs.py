@@ -4,10 +4,10 @@ This module includes dog image commands.
 """
 
 
-import discord
+import disnake
 import requests
 
-from discord.ext import commands
+from disnake.ext import commands
 
 
 class Dogs(commands.Cog):
@@ -18,14 +18,14 @@ class Dogs(commands.Cog):
     async def dog(self, ctx):
         """!dog - Display random dog image."""
         url = 'https://dog.ceo/api/breeds/image/random'
-        embed = discord.Embed(colour=discord.Colour.blue())
+        embed = disnake.Embed(colour=disnake.Colour.blue())
 
         try:
             r = requests.get(url)
             r.raise_for_status()
         except requests.exceptions.RequestException:
-            embed = discord.Embed(
-                colour=discord.Colour.darker_grey(),
+            embed = disnake.Embed(
+                colour=disnake.Colour.darker_grey(),
                 description='Failed to connect to the *Dog API*'
             )
             return await ctx.send(embed=embed)
@@ -38,14 +38,14 @@ class Dogs(commands.Cog):
     async def labrador(self, ctx):
         """!labrador - Display random Labrador image."""
         url = 'https://dog.ceo/api/breed/labrador/images/random'
-        embed = discord.Embed(colour=discord.Colour.blue())
+        embed = disnake.Embed(colour=disnake.Colour.blue())
 
         try:
             r = requests.get(url)
             r.raise_for_status()
         except requests.exceptions.RequestException:
-            embed = discord.Embed(
-                colour=discord.Colour.darker_grey(),
+            embed = disnake.Embed(
+                colour=disnake.Colour.darker_grey(),
                 description='Failed to connect to the *Dog API*'
             )
             return await ctx.send(embed=embed)
@@ -58,14 +58,14 @@ class Dogs(commands.Cog):
     async def pyrenees(self, ctx):
         """!pyrenees - Display random Pyrenees image."""
         url = 'https://dog.ceo/api/breed/pyrenees/images/random'
-        embed = discord.Embed(colour=discord.Colour.blue())
+        embed = disnake.Embed(colour=disnake.Colour.blue())
 
         try:
             r = requests.get(url)
             r.raise_for_status()
         except requests.exceptions.RequestException:
-            embed = discord.Embed(
-                colour=discord.Colour.darker_grey(),
+            embed = disnake.Embed(
+                colour=disnake.Colour.darker_grey(),
                 description='Failed to connect to the *Dog API*'
             )
             return await ctx.send(embed=embed)
@@ -78,14 +78,14 @@ class Dogs(commands.Cog):
     async def shiba(self, ctx):
         """!shiba - Display random Shiba image."""
         url = 'https://dog.ceo/api/breed/shiba/images/random'
-        embed = discord.Embed(colour=discord.Colour.blue())
+        embed = disnake.Embed(colour=disnake.Colour.blue())
 
         try:
             r = requests.get(url)
             r.raise_for_status()
         except requests.exceptions.RequestException:
-            embed = discord.Embed(
-                colour=discord.Colour.darker_grey(),
+            embed = disnake.Embed(
+                colour=disnake.Colour.darker_grey(),
                 description='Failed to connect to the *Dog API*'
             )
             return await ctx.send(embed=embed)

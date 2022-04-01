@@ -4,13 +4,12 @@ This module contains information commands.
 """
 
 
+import disnake
 import os
+import psutil
 import time
 
-import discord
-import psutil
-
-from discord.ext import commands
+from disnake.ext import commands
 
 
 class Info(commands.Cog):
@@ -47,8 +46,8 @@ class Info(commands.Cog):
             '- ...and much more!'
             )
 
-        embed = discord.Embed(
-            colour=discord.Colour.purple(),
+        embed = disnake.Embed(
+            colour=disnake.Colour.purple(),
             title='Codex BOT - Information'
         )
         embed.add_field(name=features, value=f'[🤖 View on GitHub]({github_url})')
@@ -63,7 +62,7 @@ class Info(commands.Cog):
         latency = self.bot.latency
         milliseconds = int(round(latency * 1000))
 
-        embed = discord.Embed(colour=discord.Colour.green())
+        embed = disnake.Embed(colour=disnake.Colour.green())
         embed.add_field(name='Pong!', value=f'Latency: *{milliseconds}ms*')
         await ctx.send(embed=embed)
 
@@ -78,8 +77,8 @@ class Info(commands.Cog):
         mem_usage = process.memory_info().rss
         mem_usage /= 1024 ** 2
 
-        embed = discord.Embed(
-            colour=discord.Colour.green(),
+        embed = disnake.Embed(
+            colour=disnake.Colour.green(),
             title='Codex BOT - Stats'
         )
         embed.set_thumbnail(url=self.bot.user.avatar_url)

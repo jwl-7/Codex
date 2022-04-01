@@ -4,10 +4,10 @@ This module includes joke commands.
 """
 
 
-import discord
+import disnake
 import requests
 
-from discord.ext import commands
+from disnake.ext import commands
 
 
 class Jokes(commands.Cog):
@@ -18,14 +18,14 @@ class Jokes(commands.Cog):
     async def csjoke(self, ctx):
         """!csjoke - Receive random programming joke."""
         url = 'https://official-joke-api.appspot.com/jokes/programming/random'
-        embed = discord.Embed(colour=discord.Colour.blue())
+        embed = disnake.Embed(colour=disnake.Colour.blue())
 
         try:
             r = requests.get(url)
             r.raise_for_status()
         except requests.exceptions.RequestException:
-            embed = discord.Embed(
-                colour=discord.Colour.darker_grey(),
+            embed = disnake.Embed(
+                colour=disnake.Colour.darker_grey(),
                 description='Failed to connect to the *Programming Joke API*'
             )
             return await ctx.send(embed=embed)
@@ -40,14 +40,14 @@ class Jokes(commands.Cog):
     async def chucknorris(self, ctx):
         """!chucknorris - Receive random Chuck Norris joke."""
         url = 'https://api.chucknorris.io/jokes/random'
-        embed = discord.Embed(colour=discord.Colour.blue())
+        embed = disnake.Embed(colour=disnake.Colour.blue())
 
         try:
             r = requests.get(url)
             r.raise_for_status()
         except requests.exceptions.RequestException:
-            embed = discord.Embed(
-                colour=discord.Colour.darker_grey(),
+            embed = disnake.Embed(
+                colour=disnake.Colour.darker_grey(),
                 description='Failed to connect to the *Chuck Norris Joke API*'
             )
             return await ctx.send(embed=embed)
@@ -61,14 +61,14 @@ class Jokes(commands.Cog):
     async def joke(self, ctx):
         """!joke - Receive random dad joke."""
         url = 'https://icanhazdadjoke.com/'
-        embed = discord.Embed(colour=discord.Colour.blue())
+        embed = disnake.Embed(colour=disnake.Colour.blue())
 
         try:
             r = requests.get(url, headers={'Accept': 'application/json'})
             r.raise_for_status()
         except requests.exceptions.RequestException:
-            embed = discord.Embed(
-                colour=discord.Colour.darker_grey(),
+            embed = disnake.Embed(
+                colour=disnake.Colour.darker_grey(),
                 description='Failed to connect to the *Joke API*'
             )
             return await ctx.send(embed=embed)

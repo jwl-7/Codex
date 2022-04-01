@@ -4,9 +4,9 @@ This module contains help commands.
 """
 
 
-import discord
+import disnake
 
-from discord.ext import commands
+from disnake.ext import commands
 
 
 class Help(commands.Cog):
@@ -26,8 +26,8 @@ class Help(commands.Cog):
             '**!restart** - Restart Codex.'
             )
 
-        embed = discord.Embed(
-            colour=discord.Colour.red(),
+        embed = disnake.Embed(
+            colour=disnake.Colour.red(),
             title='Codex BOT - Admin Command List'
         )
         embed.add_field(name=admin_cmds, value='\u200b')
@@ -79,8 +79,8 @@ class Help(commands.Cog):
             '**!udefine** *<search>* - Search Urban Dictionary.'
             )
 
-        embed = discord.Embed(
-            colour=discord.Colour.purple(),
+        embed = disnake.Embed(
+            colour=disnake.Colour.purple(),
             title='Codex BOT - Command List'
         )
         embed.add_field(name='Info', value=info_cmds, inline=False)

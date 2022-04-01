@@ -4,10 +4,10 @@ This module includes commands that modify text.
 """
 
 
-import discord
+import disnake
 import pyfiglet
 
-from discord.ext import commands
+from disnake.ext import commands
 
 
 class Text(commands.Cog):
@@ -20,14 +20,14 @@ class Text(commands.Cog):
         ascii_art = str(pyfiglet.figlet_format(message.strip()))
 
         if len(ascii_art) > 2000:
-            embed = discord.Embed(
-                colour=discord.Colour.darker_grey(),
+            embed = disnake.Embed(
+                colour=disnake.Colour.darker_grey(),
                 description='Your message was too long for **!ascii**'
             )
             return await ctx.send(embed=embed)
 
-        embed = discord.Embed(
-            colour=discord.Colour.blue(),
+        embed = disnake.Embed(
+            colour=disnake.Colour.blue(),
             description=(
                 f'**{ctx.author.name}:**\n'
                 f'```{ascii_art}```'
@@ -55,8 +55,8 @@ class Text(commands.Cog):
         for char in message:
             flip_text += flipped[char] if char in flipped else char
 
-        embed = discord.Embed(
-            colour=discord.Colour.blue(),
+        embed = disnake.Embed(
+            colour=disnake.Colour.blue(),
             description=f'**{ctx.author.name}:** {flip_text[::-1]}'
         )
         await ctx.message.delete()
@@ -69,8 +69,8 @@ class Text(commands.Cog):
         for i, char in enumerate(message):
             sponge_text += char.upper() if i & 1 else char.lower()
 
-        embed = discord.Embed(
-            colour=discord.Colour.blue(),
+        embed = disnake.Embed(
+            colour=disnake.Colour.blue(),
             description=f'**{ctx.author.name}:** {sponge_text}'
         )
         await ctx.message.delete()
