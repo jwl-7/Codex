@@ -30,7 +30,7 @@ class Help(commands.Cog):
             colour=disnake.Colour.red(),
             title='Codex BOT - Admin Command List'
         )
-        embed.add_field(name=admin_cmds, value='\u200b')
+        embed.add_field(name='Admin', value=admin_cmds, inline=False)
         await ctx.author.send(embed=embed)
 
     @commands.command()
