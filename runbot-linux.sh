@@ -4,7 +4,7 @@ do
     echo
     echo Starting codex.py...
     echo
-    python3 codex.py
+    venv/scripts/python codex.py
     echo Restarting codex.py...
     sleep 5
 done

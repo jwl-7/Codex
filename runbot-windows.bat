@@ -3,7 +3,7 @@ echo.
 echo Starting codex.py...
 echo.
 :loop
-    python codex.py
+    venv\scripts\python.exe codex.py
     echo.
     echo Restarting codex.py...
     echo.
