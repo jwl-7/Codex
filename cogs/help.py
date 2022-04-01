@@ -16,14 +16,14 @@ class Help(commands.Cog):
     @commands.command()
     @commands.has_permissions(administrator=True)
     async def adminhelp(self, ctx):
-        """!adminhelp - DM admin command list."""
+        """.adminhelp - DM admin command list."""
         admin_cmds = (
-            '**!admincheck** - Check if you are the Codex BOT owner.\n'
-            '**!adminhelp** - DM admin command list.\n'
-            '**!load** *<name>* - Load extension.\n'
-            '**!unload** *<name>* - Unload extension\n'
-            '**!reload** *<name>* - Reload extension\n'
-            '**!restart** - Restart Codex.'
+            '**.admincheck** - Check if you are the Codex BOT owner.\n'
+            '**.adminhelp** - DM admin command list.\n'
+            '**.load** *<name>* - Load extension.\n'
+            '**.unload** *<name>* - Unload extension\n'
+            '**.reload** *<name>* - Reload extension\n'
+            '**.restart** - Restart Codex.'
             )
 
         embed = disnake.Embed(
@@ -35,48 +35,48 @@ class Help(commands.Cog):
 
     @commands.command()
     async def help(self, ctx):
-        """!help - DM command list."""
+        """.help - DM command list."""
         info_cmds = (
-            '**!about** - Codex BOT information.\n'
-            '**!help** - DM command list.\n'
-            '**!ping** - Test BOT latency.\n'
-            '**!status** - Codex BOT stats.'
+            '**.about** - Codex BOT information.\n'
+            '**.help** - DM command list.\n'
+            '**.ping** - Test BOT latency.\n'
+            '**.status** - Codex BOT stats.'
             )
         fun_cmds = (
-            '**!8ball** - Ask the Magic 8-Ball.\n'
-            '**!coin** - Flip a coin.\n'
-            '**!dice** - Roll two dice.\n'
-            '**!horoscope** *<sunsign>* - Find out daily horoscope.\n'
-            '**!lmgtfy** *<search>* - Create LMGTFY link.\n'
-            '**!slots** - Play fruit emojis slot machine.'
+            '**.8ball** - Ask the Magic 8-Ball.\n'
+            '**.coin** - Flip a coin.\n'
+            '**.dice** - Roll two dice.\n'
+            '**.horoscope** *<sunsign>* - Find out daily horoscope.\n'
+            '**.lmgtfy** *<search>* - Create LMGTFY link.\n'
+            '**.slots** - Play fruit emojis slot machine.'
             )
         joke_cmds = (
-            '**!csjoke** - Receive random programming joke.\n'
-            '**!chucknorris** - Receive Chuck Norris joke.\n'
-            '**!joke** - Receive random dad joke.'
+            '**.csjoke** - Receive random programming joke.\n'
+            '**.chucknorris** - Receive Chuck Norris joke.\n'
+            '**.joke** - Receive random dad joke.'
             )
         jargon_cmds = (
-            '**!audiophile** - Generate hipster audio jargon.\n'
-            '**!corporate** - Generate corporate bullshit.\n'
-            '**!education** - Generate educational nonsense.\n'
-            '**!excuse** - Generate the perfect excuse.\n'
-            '**!technology** - Generate hollywood tech jargon.\n'
-            '**!wisdom** - Generate deepak chopra quote.'
+            '**.audiophile** - Generate hipster audio jargon.\n'
+            '**.corporate** - Generate corporate bullshit.\n'
+            '**.education** - Generate educational nonsense.\n'
+            '**.excuse** - Generate the perfect excuse.\n'
+            '**.technology** - Generate hollywood tech jargon.\n'
+            '**.wisdom** - Generate deepak chopra quote.'
             )
         text_cmds = (
-            '**!ascii** *<message>* - Convert text to ASCII art.\n'
-            '**!fliptext** *<message>* - Flip text upside down/backwards.\n'
-            '**!sponge** *<message>* - Convert text to sPoNgEbOb mOcKiNg tExT.'
+            '**.ascii** *<message>* - Convert text to ASCII art.\n'
+            '**.fliptext** *<message>* - Flip text upside down/backwards.\n'
+            '**.sponge** *<message>* - Convert text to sPoNgEbOb mOcKiNg tExT.'
             )
         dog_cmds = (
-            '**!dog** - Display random dog image.\n'
-            '**!labrador** - Display random Labrador image.\n'
-            '**!pyrenees** - Display random Pyrenees image.\n'
-            '**!shiba** - Display random Shiba image.\n'
+            '**.dog** - Display random dog image.\n'
+            '**.labrador** - Display random Labrador image.\n'
+            '**.pyrenees** - Display random Pyrenees image.\n'
+            '**.shiba** - Display random Shiba image.\n'
             )
         dictionary_cmds = (
-            '**!define** *<search>* - Search Merriam-Webster dictionary.\n'
-            '**!udefine** *<search>* - Search Urban Dictionary.'
+            '**.define** *<search>* - Search Merriam-Webster dictionary.\n'
+            '**.udefine** *<search>* - Search Urban Dictionary.'
             )
 
         embed = disnake.Embed(

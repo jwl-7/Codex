@@ -16,7 +16,7 @@ class Jokes(commands.Cog):
 
     @commands.command()
     async def csjoke(self, ctx):
-        """!csjoke - Receive random programming joke."""
+        """.csjoke - Receive random programming joke."""
         url = 'https://official-joke-api.appspot.com/jokes/programming/random'
         embed = disnake.Embed(colour=disnake.Colour.blue())
 
@@ -38,7 +38,7 @@ class Jokes(commands.Cog):
 
     @commands.command()
     async def chucknorris(self, ctx):
-        """!chucknorris - Receive random Chuck Norris joke."""
+        """.chucknorris - Receive random Chuck Norris joke."""
         url = 'https://api.chucknorris.io/jokes/random'
         embed = disnake.Embed(colour=disnake.Colour.blue())
 
@@ -59,7 +59,7 @@ class Jokes(commands.Cog):
 
     @commands.command()
     async def joke(self, ctx):
-        """!joke - Receive random dad joke."""
+        """.joke - Receive random dad joke."""
         url = 'https://icanhazdadjoke.com/'
         embed = disnake.Embed(colour=disnake.Colour.blue())
 

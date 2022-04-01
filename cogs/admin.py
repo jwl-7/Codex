@@ -17,7 +17,7 @@ class Admin(commands.Cog):
 
     @commands.command()
     async def admincheck(self, ctx):
-        """!admincheck - Check if you are the Codex BOT owner."""
+        """.admincheck - Check if you are the Codex BOT owner."""
         is_admin = ctx.author.id == config.bot['owner']
         embed = disnake.Embed(colour=disnake.Colour.red())
         if is_admin:
@@ -35,7 +35,7 @@ class Admin(commands.Cog):
     @commands.command()
     @commands.has_permissions(administrator=True)
     async def load(self, ctx, name):
-        """!load <name> - Load extension."""
+        """.load <name> - Load extension."""
         embed = disnake.Embed(colour=disnake.Colour.red())
         try:
             self.bot.load_extension(f'cogs.{name}')
@@ -55,7 +55,7 @@ class Admin(commands.Cog):
     @commands.command()
     @commands.has_permissions(administrator=True)
     async def unload(self, ctx, name):
-        """!unload <name> - Unload extension."""
+        """.unload <name> - Unload extension."""
         embed = disnake.Embed(colour=disnake.Colour.red())
         try:
             self.bot.unload_extension(f'cogs.{name}')
@@ -75,7 +75,7 @@ class Admin(commands.Cog):
     @commands.command()
     @commands.has_permissions(administrator=True)
     async def reload(self, ctx, name):
-        """!reload <name> - Reload extension."""
+        """.reload <name> - Reload extension."""
         embed = disnake.Embed(colour=disnake.Colour.red())
         try:
             self.bot.reload_extension(f'cogs.{name}')
@@ -95,7 +95,7 @@ class Admin(commands.Cog):
     @commands.command()
     @commands.has_permissions(administrator=True)
     async def restart(self, ctx):
-        """!restart - Restart Codex."""
+        """.restart - Restart Codex."""
         embed = disnake.Embed(colour=disnake.Colour.red())
         embed.add_field(
             name='Admin',

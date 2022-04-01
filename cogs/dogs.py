@@ -16,7 +16,7 @@ class Dogs(commands.Cog):
 
     @commands.command()
     async def dog(self, ctx):
-        """!dog - Display random dog image."""
+        """.dog - Display random dog image."""
         url = 'https://dog.ceo/api/breeds/image/random'
         embed = disnake.Embed(colour=disnake.Colour.blue())
 
@@ -36,7 +36,7 @@ class Dogs(commands.Cog):
 
     @commands.command()
     async def labrador(self, ctx):
-        """!labrador - Display random Labrador image."""
+        """.labrador - Display random Labrador image."""
         url = 'https://dog.ceo/api/breed/labrador/images/random'
         embed = disnake.Embed(colour=disnake.Colour.blue())
 
@@ -56,7 +56,7 @@ class Dogs(commands.Cog):
 
     @commands.command()
     async def pyrenees(self, ctx):
-        """!pyrenees - Display random Pyrenees image."""
+        """.pyrenees - Display random Pyrenees image."""
         url = 'https://dog.ceo/api/breed/pyrenees/images/random'
         embed = disnake.Embed(colour=disnake.Colour.blue())
 
@@ -76,7 +76,7 @@ class Dogs(commands.Cog):
 
     @commands.command()
     async def shiba(self, ctx):
-        """!shiba - Display random Shiba image."""
+        """.shiba - Display random Shiba image."""
         url = 'https://dog.ceo/api/breed/shiba/images/random'
         embed = disnake.Embed(colour=disnake.Colour.blue())
 

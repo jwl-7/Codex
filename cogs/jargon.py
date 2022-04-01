@@ -23,7 +23,7 @@ class Jargon(commands.Cog):
 
     @commands.command()
     async def audiophile(self, ctx):
-        """!audiophile - Generate hipster audio jargon."""
+        """.audiophile - Generate hipster audio jargon."""
         words = {
             0: random.choice(audio.words0),
             1: random.choice(audio.words1),
@@ -42,7 +42,7 @@ class Jargon(commands.Cog):
 
     @commands.command()
     async def corporate(self, ctx):
-        """!corporate - Generate corporate bulls**t statement."""
+        """.corporate - Generate corporate bulls**t statement."""
         adverb = random.choice(corp.adverbs)
         verb = random.choice(corp.verbs)
         adjective = random.choice(corp.adjectives)
@@ -55,7 +55,7 @@ class Jargon(commands.Cog):
 
     @commands.command()
     async def education(self, ctx):
-        """!education - Generate educational nonsense."""
+        """.education - Generate educational nonsense."""
         verb = random.choice(edu.verbs)
         adjective = random.choice(edu.adjectives)
         noun = random.choice(edu.nouns)
@@ -68,7 +68,7 @@ class Jargon(commands.Cog):
 
     @commands.command()
     async def excuse(self, ctx):
-        """!excuse - Generate the perfect excuse."""
+        """.excuse - Generate the perfect excuse."""
         words = {
             0: random.choice(excuses.words0),
             1: random.choice(excuses.words1),
@@ -87,7 +87,7 @@ class Jargon(commands.Cog):
 
     @commands.command()
     async def technology(self, ctx):
-        """!technology - Generate hollywood tech jargon."""
+        """.technology - Generate hollywood tech jargon."""
         words = {
             0: random.choice(tech.words0),
             1: random.choice(tech.words1),
@@ -106,7 +106,7 @@ class Jargon(commands.Cog):
 
     @commands.command()
     async def wisdom(self, ctx):
-        """!wisdom - Generate Deepak Chopra quote."""
+        """.wisdom - Generate Deepak Chopra quote."""
         part0 = random.choice(chopra.words0)
         part1 = random.choice(chopra.words1)
         part2 = random.choice(chopra.words2)

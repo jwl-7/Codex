@@ -17,7 +17,7 @@ class Dictionary(commands.Cog):
 
     @commands.command()
     async def define(self, ctx, *, search):
-        """!define <search> - Search Merriam-Webster Dictionary."""
+        """.define <search> - Search Merriam-Webster Dictionary."""
         url = 'https://dictionaryapi.com/api/v3/references/collegiate/json/'
         web_url = 'https://www.merriam-webster.com/dictionary/'
         icon_url = 'https://i.imgur.com/rPvCVSQ.png'
@@ -52,7 +52,7 @@ class Dictionary(commands.Cog):
 
     @commands.command()
     async def udefine(self, ctx, *, search):
-        """!udefine <search> - Search Urban Dictionary."""
+        """.udefine <search> - Search Urban Dictionary."""
         url = 'http://api.urbandictionary.com/v0/define?term='
         icon_url = 'https://i.imgur.com/Ojxf6W5.png'
         embed = disnake.Embed(colour=disnake.Colour.blue())

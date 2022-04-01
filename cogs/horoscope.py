@@ -16,7 +16,7 @@ class Horoscope(commands.Cog):
 
     @commands.command()
     async def horoscope(self, ctx, sign):
-        """!horoscope <sunsign> - Find out daily horoscope."""
+        """.horoscope <sunsign> - Find out daily horoscope."""
         url = 'http://horoscope-api.herokuapp.com/horoscope/today/'
         icon_url = 'https://i.imgur.com/MWu59YN.png'
         sign = sign.capitalize()
@@ -38,7 +38,7 @@ class Horoscope(commands.Cog):
         if sign not in emojis:
             embed = disnake.Embed(
                 colour=disnake.Colour.darker_grey(),
-                description='Invalid astrological sign for **!horoscope**'
+                description='Invalid astrological sign for **.horoscope**'
             )
             return await ctx.send(embed=embed)
 

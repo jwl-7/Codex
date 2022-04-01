@@ -30,7 +30,7 @@ class Info(commands.Cog):
 
     @commands.command()
     async def about(self, ctx):
-        """!about - Codex BOT information."""
+        """.about - Codex BOT information."""
         github_url = 'https://github.com/jwl-7/Codex'
         preview_url = 'https://i.imgur.com/GsFqPu8.gif'
         avatar_url = 'https://i.imgur.com/sR82NlB.jpg'
@@ -58,7 +58,7 @@ class Info(commands.Cog):
 
     @commands.command()
     async def ping(self, ctx):
-        """!ping - Test BOT latency."""
+        """.ping - Test BOT latency."""
         latency = self.bot.latency
         milliseconds = int(round(latency * 1000))
 
@@ -68,7 +68,7 @@ class Info(commands.Cog):
 
     @commands.command()
     async def status(self, ctx):
-        """!status - Codex BOT stats."""
+        """.status - Codex BOT stats."""
         uptime = time.time() - self.bot.uptime
         minutes, seconds = divmod(uptime, 60)
         hours, minutes = divmod(minutes, 60)

@@ -17,7 +17,7 @@ class Fun(commands.Cog):
 
     @commands.command()
     async def coin(self, ctx):
-        """!coin - Flip a coin."""
+        """.coin - Flip a coin."""
         icon_url = 'https://i.imgur.com/jQX05l8.png'
         faces = ['Heads!', 'Tails!']
         outcome = random.choice(faces)
@@ -29,7 +29,7 @@ class Fun(commands.Cog):
 
     @commands.command()
     async def dice(self, ctx):
-        """!dice - Roll two dice."""
+        """.dice - Roll two dice."""
         icon_url = 'https://i.imgur.com/rkfXx3q.png'
         die1 = random.randint(1, 6)
         die2 = random.randint(1, 6)
@@ -45,7 +45,7 @@ class Fun(commands.Cog):
 
     @commands.command()
     async def lmgtfy(self, ctx, *, search):
-        """!lmgtfy <search> - Create LMGTFY link."""
+        """.lmgtfy <search> - Create LMGTFY link."""
         url = 'https://lmgtfy.com/?iie=1&q='
         link = f'{url}{requests.utils.quote(search)}'
         embed = disnake.Embed(colour=disnake.Colour.blue())

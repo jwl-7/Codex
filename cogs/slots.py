@@ -16,7 +16,7 @@ class Slots(commands.Cog):
 
     @commands.command()
     async def slots(self, ctx):
-        """!slots - Play fruit emojis slot machine."""
+        """.slots - Play fruit emojis slot machine."""
         icon_url = 'https://i.imgur.com/8oGuoyq.png'
         slots = ['apple', 'watermelon', 'taco', 'cherries', 'doughnut', 'grapes']
         slot1 = slots[random.randint(0, 5)]

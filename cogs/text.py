@@ -16,13 +16,13 @@ class Text(commands.Cog):
 
     @commands.command()
     async def ascii(self, ctx, *, message):
-        """!ascii <message> - Convert text to ASCII art."""
+        """.ascii <message> - Convert text to ASCII art."""
         ascii_art = str(pyfiglet.figlet_format(message.strip()))
 
         if len(ascii_art) > 2000:
             embed = disnake.Embed(
                 colour=disnake.Colour.darker_grey(),
-                description='Your message was too long for **!ascii**'
+                description='Your message was too long for **.ascii**'
             )
             return await ctx.send(embed=embed)
 
@@ -38,7 +38,7 @@ class Text(commands.Cog):
 
     @commands.command()
     async def fliptext(self, ctx, *, message):
-        """!fliptext <message> - Flip text upside down/backwards."""
+        """.fliptext <message> - Flip text upside down/backwards."""
         chars = (
             "!#$%&'()*+,-./0123456789:;<=>?@"
             "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -64,7 +64,7 @@ class Text(commands.Cog):
 
     @commands.command()
     async def sponge(self, ctx, *, message):
-        """!sponge <message> - Convert text to sPoNgEbOb mOcKiNg tExT."""
+        """.sponge <message> - Convert text to sPoNgEbOb mOcKiNg tExT."""
         sponge_text = ''
         for i, char in enumerate(message):
             sponge_text += char.upper() if i & 1 else char.lower()
