@@ -70,7 +70,7 @@ verbs = [
     'unpack',
     'utilize',
     'visualize'
-    ]
+]
 
 adjectives = [
     'actionable',
@@ -154,7 +154,7 @@ adjectives = [
     'thematic',
     'top-down',
     'visionary'
-    ]
+]
 
 nouns = [
     'action plans',
@@ -254,7 +254,7 @@ nouns = [
     'terminal and enabling objectives',
     'trans-disciplinarity',
     'units'
-    ]
+]
 
 phrases = [
     'across content areas',
@@ -283,4 +283,4 @@ phrases = [
     'within the new paradigm',
     'within the Zone of Proximity',
     'with synergistic effects'
-    ]
+]

@@ -43,12 +43,12 @@ class Text(commands.Cog):
             "!#$%&'()*+,-./0123456789:;<=>?@"
             "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
             "[\]^_`abcdefghijklmnopqrstuvwxyz{|}"
-            )
+        )
         alt_chars = (
             "¡#$%⅋,)(*+'-˙/0ƖᄅƐㄣϛ9ㄥ86:;>=<¿@"
             "∀qƆpƎℲפHIſʞ˥WNOԀQɹS┴∩ΛMX⅄Z"
             "]\[^‾,ɐqɔpǝɟƃɥᴉɾʞlɯuodbɹsʇnʌʍxʎz}|{"
-            )
+        )
         flipped = dict(zip(chars, alt_chars))
 
         flip_text = ''

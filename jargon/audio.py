@@ -37,7 +37,7 @@ words0 = [
     'VST3',
     'WAV',
     'WMA'
-    ]
+]
 
 words1 = [
     'aliased',
@@ -68,7 +68,7 @@ words1 = [
     'unbalanced',
     'vintage',
     'virtual'
-    ]
+]
 
 words2 = [
     'amplifier',
@@ -104,7 +104,7 @@ words2 = [
     'tone',
     'transducer',
     'waveform'
-    ]
+]
 
 words3 = [
     'adjust',
@@ -130,7 +130,7 @@ words3 = [
     'quantize',
     'shelve',
     'sweep'
-    ]
+]
 
 words4 = [
     'amplifying',
@@ -154,7 +154,7 @@ words4 = [
     'quantizing',
     'shelving',
     'sweeping'
-    ]
+]
 
 sentences = [
     "Ever since {4} the {2} on my {2}, I can totally {3} more {1} {2}s in my {2}.",
@@ -172,4 +172,4 @@ sentences = [
     "You should try using the {1} {0} {2}, it will {3} your {1} {2} like you wouldn't believe.",
     "{4} has never been the same since I lost my {1} {1} {2}, now I have to use my {2} for {4}.",
     "{4} your {1} {2} will really bring out the {1} {1} {2} when you {3} the {2}."
-    ]
+]

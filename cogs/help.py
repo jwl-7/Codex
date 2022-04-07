@@ -24,7 +24,7 @@ class Help(commands.Cog):
             '**.unload** *<name>* - Unload extension\n'
             '**.reload** *<name>* - Reload extension\n'
             '**.restart** - Restart Codex.'
-            )
+        )
 
         embed = disnake.Embed(
             colour=disnake.Colour.red(),
@@ -41,7 +41,7 @@ class Help(commands.Cog):
             '**.help** - DM command list.\n'
             '**.ping** - Test BOT latency.\n'
             '**.status** - Codex BOT stats.'
-            )
+        )
         fun_cmds = (
             '**.8ball** - Ask the Magic 8-Ball.\n'
             '**.coin** - Flip a coin.\n'
@@ -49,12 +49,12 @@ class Help(commands.Cog):
             '**.horoscope** *<sunsign>* - Find out daily horoscope.\n'
             '**.lmgtfy** *<search>* - Create LMGTFY link.\n'
             '**.slots** - Play fruit emojis slot machine.'
-            )
+        )
         joke_cmds = (
             '**.csjoke** - Receive random programming joke.\n'
             '**.chucknorris** - Receive Chuck Norris joke.\n'
             '**.joke** - Receive random dad joke.'
-            )
+        )
         jargon_cmds = (
             '**.audiophile** - Generate hipster audio jargon.\n'
             '**.corporate** - Generate corporate bullshit.\n'
@@ -62,22 +62,22 @@ class Help(commands.Cog):
             '**.excuse** - Generate the perfect excuse.\n'
             '**.technology** - Generate hollywood tech jargon.\n'
             '**.wisdom** - Generate deepak chopra quote.'
-            )
+        )
         text_cmds = (
             '**.ascii** *<message>* - Convert text to ASCII art.\n'
             '**.fliptext** *<message>* - Flip text upside down/backwards.\n'
             '**.sponge** *<message>* - Convert text to sPoNgEbOb mOcKiNg tExT.'
-            )
+        )
         dog_cmds = (
             '**.dog** - Display random dog image.\n'
             '**.labrador** - Display random Labrador image.\n'
             '**.pyrenees** - Display random Pyrenees image.\n'
             '**.shiba** - Display random Shiba image.\n'
-            )
+        )
         dictionary_cmds = (
             '**.define** *<search>* - Search Merriam-Webster dictionary.\n'
             '**.udefine** *<search>* - Search Urban Dictionary.'
-            )
+        )
 
         embed = disnake.Embed(
             colour=disnake.Colour.purple(),

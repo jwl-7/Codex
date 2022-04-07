@@ -61,7 +61,7 @@ words0 = [
     'Making tea',
     'The key to joy',
     'Innocence'
-    ]
+]
 
 words1 = [
     'relies on',
@@ -118,7 +118,7 @@ words1 = [
     'compliments',
     'corresponds to',
     'results from'
-    ]
+]
 
 words2 = [
     'your own',
@@ -173,7 +173,7 @@ words2 = [
     'formless',
     'total acceptance of',
     'innumerable'
-    ]
+]
 
 words3 = [
     'joy',
@@ -223,4 +223,4 @@ words3 = [
     'phenomena',
     'miracles',
     'observations'
-    ]
+]

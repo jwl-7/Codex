@@ -33,7 +33,7 @@ words0 = [
     'secretary',
     'sister',
     'son\'s girlfriend'
-    ]
+]
 
 words1 = [
     'accidentally',
@@ -60,7 +60,7 @@ words1 = [
     'unintentionally',
     'unwittingly',
     'viciously'
-    ]
+]
 
 words2 = [
     'application',
@@ -86,7 +86,7 @@ words2 = [
     'second draft',
     'task list',
     'thesis'
-    ]
+]
 
 words3 = [
     'ate',
@@ -115,7 +115,7 @@ words3 = [
     'tainted',
     'threw up on',
     'tore up'
-    ]
+]
 
 words4 = [
     'add to',
@@ -136,7 +136,7 @@ words4 = [
     'submit',
     'work on',
     'write'
-    ]
+]
 
 sentences = [
     "After my {0} {1} {3} my {2}, I obviously couldn't {4} it.",
@@ -150,4 +150,4 @@ sentences = [
     "My {0} {3} my {2}, because they thought my {0}'s was better.",
     "Remember when my {0} {3} my {2}? Well, today they {1} {3} it too, so I can't {4} it.",
     "The thing is, I can't {4} my {2} because my {0} {3} it, probably {1}."
-    ]
+]

@@ -37,7 +37,7 @@ adverbs = [
     'seamlessly',
     'synergistically',
     'uniquely'
-    ]
+]
 
 verbs = [
     'actualize',
@@ -140,7 +140,7 @@ verbs = [
     'utilize',
     'visualize',
     'whiteboard',
-    ]
+]
 
 adjectives = [
     '24/7',
@@ -304,7 +304,7 @@ adjectives = [
     'wireless',
     'world-class',
     'worldwide'
-    ]
+]
 
 nouns = [
     'action items',
@@ -401,4 +401,4 @@ nouns = [
     'web services',
     'wins',
     'virtualization'
-    ]
+]

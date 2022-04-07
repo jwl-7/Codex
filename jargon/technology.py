@@ -51,7 +51,7 @@ words0 = [
     'XHTML',
     'XML',
     'Y2K'
-    ]
+]
 
 words1 = [
     '1080p',
@@ -81,7 +81,7 @@ words1 = [
     'virtual',
     'visual',
     'wireless'
-    ]
+]
 
 words2 = [
     'address',
@@ -120,7 +120,7 @@ words2 = [
     'transistor',
     'transmitter',
     'virus'
-    ]
+]
 
 words3 = [
     'attach',
@@ -148,7 +148,7 @@ words3 = [
     'synthesize',
     'transcode',
     'transmit'
-    ]
+]
 
 words4 = [
     'attaching',
@@ -176,7 +176,7 @@ words4 = [
     'synthesizing',
     'transcoding',
     'transmitting'
-    ]
+]
 
 sentences = [
     "I'll {3} the {1} {0} {2}, that should {3} the {0} {2}!",
@@ -190,4 +190,4 @@ sentences = [
     "We need to {3} the {1} {0} {2}!",
     "You can't {3} the {2} without {4} the {1} {0} {2}!",
     "{4} the {2} won't do anything, we need to {3} the {1} {0} {2}!"
-    ]
+]

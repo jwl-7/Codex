@@ -39,7 +39,7 @@ class EightBall(commands.Cog):
             'My sources say no.',
             'Outlook not so good.',
             'Very doubtful.'
-            ]
+        ]
         fortune = random.choice(responses)
         embed = disnake.Embed(colour=disnake.Colour.purple())
         embed.set_author(name='Magic 8-Ball', icon_url=icon_url)

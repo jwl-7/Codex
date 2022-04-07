@@ -44,7 +44,7 @@ class Info(commands.Cog):
             '- Look up words on Merriam-Webster\n'
             '- Funny Markov chain sentence responses\n'
             '- ...and much more!'
-            )
+        )
 
         embed = disnake.Embed(
             colour=disnake.Colour.purple(),
