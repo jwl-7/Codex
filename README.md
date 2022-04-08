@@ -60,5 +60,10 @@ a python discord bot with Markov chain responses, slots, and more
 ## Preview
 [![codex-chatbot.png](https://i.imgur.com/GsFqPu8.gif)](https://imgur.com/a/VX450os)
 
+## Dev Environment Setup
+- Run `dev_setup.py`
+- Activate the virtual environment in VSCode
+    ![venv-screenshot](https://code.visualstudio.com/assets/docs/python/environments/python-environment-prompt.png)
+
 ## License
 This project is released under the GNU GPL License - see the [LICENSE](LICENSE) file for details
