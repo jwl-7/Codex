@@ -11,15 +11,20 @@ import textwrap
 
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+VENV_PATH = (
+    os.path.join(PROJECT_DIR, 'venv', 'bin', 'python')
+    if os.name == 'posix'
+    else os.path.join(PROJECT_DIR, 'venv', 'Scripts', 'python.exe')
+)
 
 
 def setup_script(name):
     """Decorator to format output when running setup scripts."""
     def wrap(func):
         def wrapper(*args, **kwargs):
-            print(f'{name}...', end='')
             result = func(*args, **kwargs)
-            print('✓') if not isinstance(result, Exception) else print(f'✗ {result}')
+            print(f'{name:.<27}', end='')
+            print('✓    ' if not result else f'✗    {result}')
             return result
         return wrapper
     return wrap
@@ -46,21 +51,28 @@ def create_config():
     }
     ''')
     try:
-        with open('config.py', 'w') as file:
+        with open('config.py', 'x') as file:
             file.write(config)
-    except OSError as error:
-        return error
+    except FileExistsError:
+        return 'config.py already exists'
 
 
-@setup_script('Creating virtual environment')
+@setup_script('Creating virtual env')
 def create_virtual_environment():
     """Create / Activate virtual environment."""
-    subprocess.run('python -m venv venv', shell=True)
-    if not hasattr(sys, 'base_prefix') or 'VIRTUAL_ENV' not in os.environ:
-        venv = os.path.join('venv', 'bin', 'python')
-        if os.name == 'nt':
-            venv = os.path.join('venv', 'Scripts', 'python.exe')
-        return venv
+    if (
+        hasattr(sys, 'base_prefix')
+        or os.path.isdir('venv')
+        or 'VIRTUAL_ENV' in os.environ
+    ):
+        return 'venv already exists'
+
+    subprocess.run(
+        'python -m venv venv',
+        shell=True,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.PIPE
+    )
 
 
 @setup_script('Installing requirements')
@@ -84,8 +96,8 @@ def setup():
     """Initialize all setup scripts."""
     os.chdir(PROJECT_DIR)
     create_config()
-    venv = create_virtual_environment()
-    install_requirements(venv)
+    create_virtual_environment()
+    install_requirements(VENV_PATH)
 
 
 def main():
