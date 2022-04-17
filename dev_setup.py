@@ -71,7 +71,7 @@ def create_virtual_environment():
         'python -m venv venv',
         shell=True,
         stdout=subprocess.DEVNULL,
-        stderr=subprocess.PIPE
+        stderr=subprocess.DEVNULL
     )
 
 
