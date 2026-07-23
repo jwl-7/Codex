@@ -64,6 +64,3 @@ a python discord bot with Markov chain responses, slots, and more
 - Run `dev_setup.py`
 - Activate the virtual environment in VSCode
     ![venv-screenshot](https://code.visualstudio.com/assets/docs/python/environments/python-environment-prompt.png)
-
-## License
-This project is released under the GNU GPL License - see the [LICENSE](LICENSE) file for details
